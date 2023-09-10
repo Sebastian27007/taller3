@@ -1,6 +1,6 @@
-# appmovil
+# ti3app
 
-"Aplicacion movil"
+"A new Flutter project."
 
 ## Getting Started
 
