@@ -98,6 +98,11 @@ class _MyCombinedPageState extends State<MyCombinedPage> {
                 Navigator.pop(context); // Cierra el Drawer
               },
             ),
+            SizedBox(height: 30,),
+            const SizedBox(
+              child: Text('Versión 1.0',
+              textAlign: TextAlign.center,),
+            )
           ],
         ),
       ),
