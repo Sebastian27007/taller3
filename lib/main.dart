@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-
+import 'login.dart';
+import 'profesores.dart';
 void main() {
   runApp(const MyApp());
 }
@@ -115,11 +116,161 @@ class _MyHomePageState extends State<MyHomePage> {
           ],
         ),
       ),
+<<<<<<< Updated upstream
       floatingActionButton: FloatingActionButton(
         onPressed: _incrementCounter,
         tooltip: 'Increment',
         child: const Icon(Icons.add),
       ), // This trailing comma makes auto-formatting nicer for build methods.
+=======
+      body: Column(
+        children: <Widget>[
+          MaterialButton(
+            onPressed: () {},
+            padding: const EdgeInsets.symmetric(horizontal: 80, vertical: 25),
+            shape: RoundedRectangleBorder(
+                borderRadius: BorderRadius.circular(20.0)),
+            color: Colors.deepPurpleAccent,
+            child: const Text(
+              'Servicio de asesorías',
+              textAlign: TextAlign.left,
+              style: TextStyle(fontSize: 36, color: Colors.white),
+            ),
+          ),
+          const SizedBox(height: 20),
+          Column(
+            children: <Widget>[
+              SizedBox(
+                width: MediaQuery.of(context).size.width,
+                child: Text('Recursos de la plataforma',
+                    textAlign: TextAlign.left,
+                    style: Theme.of(context).textTheme.headline2),
+              ),
+            ],
+          ),
+          Row(
+            mainAxisAlignment: MainAxisAlignment.spaceAround,
+            children: <Widget>[
+              IconButton(
+                onPressed: () {},
+                color: Colors.blue,
+                icon: Image.asset(
+                  'assets/icons/carpeta1.jpeg',
+                  width: 60,
+                  height: 60,
+                ),
+              ),
+              IconButton(
+                onPressed: () {},
+                icon: Image.asset(
+                  'assets/icons/carpeta1.jpeg',
+                  width: 60,
+                  height: 60,
+                ),
+              ),
+              IconButton(
+                onPressed: () {},
+                icon: Image.asset(
+                  'assets/icons/carpeta1.jpeg',
+                  width: 60,
+                  height: 60,
+                ),
+              ),
+              IconButton(
+                onPressed: () {},
+                icon: Image.asset(
+                  'assets/icons/carpeta1.jpeg',
+                  width: 60,
+                  height: 60,
+                ),
+              ),
+            ],
+          ),
+          SizedBox(
+            width: MediaQuery.of(context).size.width,
+            child: Text(
+              'Redes sociales',
+              textAlign: TextAlign.left,
+              style: Theme.of(context).textTheme.headline2,
+            ),
+          ),
+          const SizedBox(
+            height: 20,
+          ),
+          Row(
+            mainAxisAlignment: MainAxisAlignment.spaceAround,
+            children: <Widget>[
+              MaterialButton(
+                onPressed: () {
+                  Navigator.push(
+                    context, MaterialPageRoute(builder: (context) => LoginApp()),
+                  );
+                },
+                padding:
+                    const EdgeInsets.symmetric(horizontal: 80, vertical: 25),
+                shape: RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(20.0)),
+                color: Colors.deepPurpleAccent,
+                child: const Text(
+                  'Asesores',
+                  style: TextStyle(color: Colors.white),
+                ),
+              ),
+              MaterialButton(
+                onPressed: () {
+                  Navigator.push(
+                    context, MaterialPageRoute(builder: (context) => Administracion()),
+                  );
+                },
+                padding:
+                    const EdgeInsets.symmetric(horizontal: 80, vertical: 25),
+                shape: RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(20.0)),
+                color: Colors.purpleAccent,
+                child: const Text(
+                  'Profesores',
+                  style: TextStyle(color: Colors.white),
+                ),
+              ),
+            ],
+          ),
+        ],
+      ),
+
+   bottomNavigationBar: BottomNavigationBar(
+  items: const <BottomNavigationBarItem>[
+    BottomNavigationBarItem(
+      icon: Icon(Icons.home),
+      label: 'Inicio',
+    ),
+    BottomNavigationBarItem(
+      icon: Icon(Icons.chat),
+      label: 'Chatbot',
+    ),
+    BottomNavigationBarItem(
+      icon: Icon(Icons.settings),
+      label: 'Ajustes',
+    ),
+    BottomNavigationBarItem(
+      icon: Icon(Icons.account_circle_rounded),
+      label: 'Login',
+    ),
+  ],
+  currentIndex: _selectedIndex,
+  selectedItemColor: Colors.blue,
+  onTap: _onItemTapped,
+),
+>>>>>>> Stashed changes
     );
   }
-}
+    //terminos y condiciones
+
+
+
+
+  }
+
+
+
+
+
