@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:ti3app/Login_app.dart';
 
 void main() {
   runApp(const MyApp());
@@ -116,13 +117,16 @@ class Myscreen extends StatelessWidget{
                   style: TextStyle(color: Colors.white),
                 ),
               ),
-              MaterialButton(onPressed: (){},
+              MaterialButton(onPressed: (){
+                Navigator.push(context, MaterialPageRoute(builder: (context) => LoginApp()),
+                );
+              },
                 padding: const EdgeInsets.symmetric(horizontal: 80, vertical: 25),
                 shape: RoundedRectangleBorder(
                     borderRadius: BorderRadius.circular(20.0)
                 ),
                 color: Colors.purpleAccent,
-                child: const Text('Profesores',
+                child: const Text('Login Test',
                   style: TextStyle(color: Colors.white),
                 ),
               ),
