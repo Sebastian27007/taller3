@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-
+import 'package:ti3app/Screens/Screen1.dart';
 
 
 
@@ -94,8 +94,8 @@ class LoginApp extends StatelessWidget{
                               ),
                               const SizedBox(height: 30,),
                               MaterialButton(onPressed: (){
-                                //Navigator.push(context, MaterialPageRoute(builder: (context) => MyApp()),
-                                //);
+                                Navigator.push(context, MaterialPageRoute(builder: (context) => Myscreen()),
+                                );
                               },
                                 shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(10)),
                                 disabledColor: Colors.grey,
