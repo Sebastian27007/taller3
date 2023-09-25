@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:ti3app/Screens/Screen1.dart';
 
 
-
 class LoginApp extends StatelessWidget{
   const LoginApp({super.key});
 
@@ -20,9 +19,7 @@ class LoginApp extends StatelessWidget{
           children: [
             Container(
               decoration: const BoxDecoration(
-                  gradient: LinearGradient(colors:
-                  [Color.fromRGBO(63,63,156,1),
-                    Color.fromRGBO(90,70,178,1)] )
+                  gradient: LinearGradient(colors: [Colors.blue, Colors.lightGreenAccent],)
               ),
               //color: Colors.purpleAccent,
               width: double.infinity,
