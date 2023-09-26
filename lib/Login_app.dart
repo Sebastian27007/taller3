@@ -1,6 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:ti3app/Screens/Screen1.dart';
 
+void main() {
+  runApp(const MaterialApp(
+    debugShowCheckedModeBanner: false,
+    home: LoginApp(),
+  ));
+}
 
 class LoginApp extends StatelessWidget{
   const LoginApp({super.key});
@@ -25,7 +31,8 @@ class LoginApp extends StatelessWidget{
               width: double.infinity,
               height: size.height * 0.4,
             ),
-            SafeArea( child:
+            SafeArea(
+              child:
             Container(
               margin: const EdgeInsets.only(top:30),
               width: double.infinity,
@@ -66,9 +73,9 @@ class LoginApp extends StatelessWidget{
                               autocorrect: false,
                               decoration:  const InputDecoration(
                                 enabledBorder: UnderlineInputBorder(
-                                    borderSide: BorderSide(color: Colors.deepPurpleAccent)),
+                                    borderSide: BorderSide(color: Colors.blueAccent)),
                                 focusedBorder: UnderlineInputBorder(
-                                  borderSide: BorderSide(color: Colors.purpleAccent,
+                                  borderSide: BorderSide(color: Colors.lightBlue,
                                       width: 2),),
                                 hintText: 'ejemplo@gmail.com',
                                 labelText: 'correo electrónico',
@@ -80,9 +87,9 @@ class LoginApp extends StatelessWidget{
                                 autocorrect: false,
                                 decoration:  const InputDecoration(
                                   enabledBorder: UnderlineInputBorder(
-                                      borderSide: BorderSide(color: Colors.deepPurpleAccent)),
+                                      borderSide: BorderSide(color: Colors.blueAccent)),
                                   focusedBorder: UnderlineInputBorder(
-                                    borderSide: BorderSide(color: Colors.purpleAccent,
+                                    borderSide: BorderSide(color: Colors.lightBlue,
                                         width: 2),),
                                   hintText: 'ingresa contraseña',
                                   labelText: 'contraseña',
@@ -91,14 +98,14 @@ class LoginApp extends StatelessWidget{
                               ),
                               const SizedBox(height: 30,),
                               MaterialButton(onPressed: (){
-                                Navigator.push(context, MaterialPageRoute(builder: (context) => Myscreen()),
+                                Navigator.push(context, MaterialPageRoute(builder: (context) => const Myscreen()),
                                 );
                               },
                                 shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(10)),
                                 disabledColor: Colors.grey,
-                                color: Colors.deepPurpleAccent,
+                                color: Colors.blueAccent,
                                 child: Container(
-                                  padding: EdgeInsets.symmetric(horizontal: 80, vertical: 15),
+                                  padding: const EdgeInsets.symmetric(horizontal: 80, vertical: 15),
                                   child: const Text('Ingresar',
                                     style: TextStyle(
                                       color: Colors.white,

@@ -1,9 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:ti3app/Login_app.dart';
+import 'package:ti3app/create_perfil.dart';
 
-void main() {
-  runApp(const MyApp());
-}
 
 class MyApp extends StatelessWidget {
   const MyApp({super.key});
@@ -80,13 +78,15 @@ class _MyCombinedPageState extends State<MyCombinedPage> {
           children: [
             const DrawerHeader(
               decoration: BoxDecoration(color: Colors.blue),
-              child: Text('Contenidos'),
+              child: Text('Contenido de la App'),
             ),
             ListTile(
               title: const Text('Mi perfil'),
               onTap: () {
                 // Agrega aquí lo que deseas hacer cuando se toque la opción 3 en el Drawer
-                Navigator.pop(context); // Cierra el Drawer
+                Navigator.push(context, MaterialPageRoute(builder: (context) => UserPerfil()),
+                );
+                //Navigator.pop(context); // Cierra el Drawer, para agregar la acción elimina esta línea o comentala porque no permite agregar otro navigator
               },
             ),
             ListTile(
@@ -219,8 +219,8 @@ class _MyCombinedPageState extends State<MyCombinedPage> {
               ),
               MaterialButton(
                 onPressed: () {
-                  Navigator.push(context, MaterialPageRoute(builder: (context) => LoginApp()),
-                  );
+                  //Navigator.push(context, MaterialPageRoute(builder: (context) => LoginApp()),
+                  //);
                 },
                 padding:
                     const EdgeInsets.symmetric(horizontal: 80, vertical: 25),
@@ -228,7 +228,7 @@ class _MyCombinedPageState extends State<MyCombinedPage> {
                     borderRadius: BorderRadius.circular(20.0)),
                 color: Colors.green,
                 child: const Text(
-                  'Login test',
+                  'Profesores',
                   style: TextStyle(color: Colors.white),
                 ),
               ),
