@@ -1,11 +1,17 @@
 import 'dart:io';
 import 'package:flutter/material.dart';
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
 import 'package:path/path.dart' as path;
 import 'package:path_provider/path_provider.dart';
 import 'package:image_picker/image_picker.dart';
 =======
 import 'package:ti3app/Login_app.dart';
+import 'package:ti3app/upload_archive.dart';
+import 'package:ti3app/screen_asesores.dart';
+>>>>>>> Stashed changes
+=======
+import 'package:ti3app/users/authentication/Login_app.dart';
 import 'package:ti3app/upload_archive.dart';
 import 'package:ti3app/screen_asesores.dart';
 >>>>>>> Stashed changes
