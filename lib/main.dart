@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:ti3app/Login_app.dart';
 
 void main() {
   runApp(const MyApp());
@@ -97,6 +98,11 @@ class _MyCombinedPageState extends State<MyCombinedPage> {
                 Navigator.pop(context); // Cierra el Drawer
               },
             ),
+            SizedBox(height: 30,),
+            const SizedBox(
+              child: Text('Versión 1.0',
+              textAlign: TextAlign.center,),
+            )
           ],
         ),
       ),
@@ -190,14 +196,17 @@ class _MyCombinedPageState extends State<MyCombinedPage> {
                 ),
               ),
               MaterialButton(
-                onPressed: () {},
+                onPressed: () {
+                  Navigator.push(context, MaterialPageRoute(builder: (context) => LoginApp()),
+                  );
+                },
                 padding:
                     const EdgeInsets.symmetric(horizontal: 80, vertical: 25),
                 shape: RoundedRectangleBorder(
                     borderRadius: BorderRadius.circular(20.0)),
                 color: Colors.purpleAccent,
                 child: const Text(
-                  'Profesores',
+                  'Login test',
                   style: TextStyle(color: Colors.white),
                 ),
               ),
