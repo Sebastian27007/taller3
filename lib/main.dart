@@ -1,9 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:ti3app/Login_app.dart';
+//import 'package:ti3app/Login_app.dart';
+import 'package:ti3app/create_perfil.dart';
 
-void main() {
-  runApp(const MyApp());
-}
 
 class MyApp extends StatelessWidget {
   const MyApp({super.key});
@@ -34,6 +33,11 @@ class MyApp extends StatelessWidget {
             fontSize: 20.0,
             fontWeight: FontWeight.bold,
             color: Color(0xFF18FFFF),
+          ),
+          headline6: TextStyle(
+              fontSize: 20.0,
+              fontWeight: FontWeight.bold,
+              color: Color(0xFF1DE9B6),
           ),
         ),
       ),
@@ -68,37 +72,55 @@ class _MyCombinedPageState extends State<MyCombinedPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: Text(MyApp.appTitle)), // Usar el título de MyApp
+      appBar: AppBar(title: const Text(MyApp.appTitle)), // Usar el título de MyApp
       drawer: Drawer(
         child: ListView(
           padding: EdgeInsets.zero,
           children: [
-            DrawerHeader(
+            const DrawerHeader(
               decoration: BoxDecoration(color: Colors.blue),
-              child: Text('Drawer Header'),
+              child: Text('Contenido de la App'),
             ),
             ListTile(
-              title: Text('Opción 1'),
+              title: const Text('Mi perfil'),
+              onTap: () {
+                // Agrega aquí lo que deseas hacer cuando se toque la opción 3 en el Drawer
+                Navigator.push(context, MaterialPageRoute(builder: (context) => UserPerfil()),
+                );
+                //Navigator.pop(context); // Cierra el Drawer, para agregar la acción elimina esta línea o comentala porque no permite agregar otro navigator
+              },
+            ),
+            ListTile(
+              title: const Text('Asesorias'),
               onTap: () {
                 // Agrega aquí lo que deseas hacer cuando se toque la opción 1 en el Drawer
                 Navigator.pop(context); // Cierra el Drawer
               },
             ),
             ListTile(
-              title: Text('Opción 2'),
+              title: const Text('Chat social'),
               onTap: () {
                 // Agrega aquí lo que deseas hacer cuando se toque la opción 2 en el Drawer
                 Navigator.pop(context); // Cierra el Drawer
               },
             ),
             ListTile(
-              title: Text('Opción 3'),
+              title: const Text('Servicio de correos'),
               onTap: () {
                 // Agrega aquí lo que deseas hacer cuando se toque la opción 3 en el Drawer
                 Navigator.pop(context); // Cierra el Drawer
               },
             ),
-            SizedBox(height: 30,),
+            ListTile(
+              title: const Text('Cerrar sesión'),
+              onTap: () {
+                Navigator.push(context, MaterialPageRoute(builder: (context) => LoginApp()),
+                );
+                // Agrega aquí lo que deseas hacer cuando se toque la opción 3 en el Drawer
+                //Navigator.pop(context); // Cierra el Drawer
+              },
+            ),
+            const SizedBox(height: 30,),
             const SizedBox(
               child: Text('Versión 1.0',
               textAlign: TextAlign.center,),
@@ -113,7 +135,7 @@ class _MyCombinedPageState extends State<MyCombinedPage> {
             padding: const EdgeInsets.symmetric(horizontal: 80, vertical: 25),
             shape: RoundedRectangleBorder(
                 borderRadius: BorderRadius.circular(20.0)),
-            color: Colors.deepPurpleAccent,
+            color: Colors.blueAccent,
             child: const Text(
               'Servicio de asesorías',
               textAlign: TextAlign.left,
@@ -145,6 +167,7 @@ class _MyCombinedPageState extends State<MyCombinedPage> {
               ),
               IconButton(
                 onPressed: () {},
+                color: Colors.blue,
                 icon: Image.asset(
                   'assets/icons/carpeta1.jpeg',
                   width: 60,
@@ -153,6 +176,7 @@ class _MyCombinedPageState extends State<MyCombinedPage> {
               ),
               IconButton(
                 onPressed: () {},
+                color: Colors.blue,
                 icon: Image.asset(
                   'assets/icons/carpeta1.jpeg',
                   width: 60,
@@ -161,6 +185,7 @@ class _MyCombinedPageState extends State<MyCombinedPage> {
               ),
               IconButton(
                 onPressed: () {},
+                color: Colors.blue,
                 icon: Image.asset(
                   'assets/icons/carpeta1.jpeg',
                   width: 60,
@@ -189,7 +214,7 @@ class _MyCombinedPageState extends State<MyCombinedPage> {
                     const EdgeInsets.symmetric(horizontal: 80, vertical: 25),
                 shape: RoundedRectangleBorder(
                     borderRadius: BorderRadius.circular(20.0)),
-                color: Colors.deepPurpleAccent,
+                color: Colors.lightBlue,
                 child: const Text(
                   'Asesores',
                   style: TextStyle(color: Colors.white),
@@ -197,16 +222,16 @@ class _MyCombinedPageState extends State<MyCombinedPage> {
               ),
               MaterialButton(
                 onPressed: () {
-                  Navigator.push(context, MaterialPageRoute(builder: (context) => LoginApp()),
-                  );
+                  //Navigator.push(context, MaterialPageRoute(builder: (context) => LoginApp()),
+                  //);
                 },
                 padding:
                     const EdgeInsets.symmetric(horizontal: 80, vertical: 25),
                 shape: RoundedRectangleBorder(
                     borderRadius: BorderRadius.circular(20.0)),
-                color: Colors.purpleAccent,
+                color: Colors.green,
                 child: const Text(
-                  'Login test',
+                  'Profesores',
                   style: TextStyle(color: Colors.white),
                 ),
               ),
@@ -232,7 +257,7 @@ class _MyCombinedPageState extends State<MyCombinedPage> {
   currentIndex: _selectedIndex,
   selectedItemColor: Colors.blue,
   onTap: _onItemTapped,
-),
+      ),
     );
   }
 }
