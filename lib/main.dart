@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:ti3app/Login_app.dart';
 //import 'package:ti3app/Login_app.dart';
 import 'package:ti3app/create_perfil.dart';
 
@@ -113,8 +114,10 @@ class _MyCombinedPageState extends State<MyCombinedPage> {
             ListTile(
               title: const Text('Cerrar sesión'),
               onTap: () {
+                Navigator.push(context, MaterialPageRoute(builder: (context) => LoginApp()),
+                );
                 // Agrega aquí lo que deseas hacer cuando se toque la opción 3 en el Drawer
-                Navigator.pop(context); // Cierra el Drawer
+                //Navigator.pop(context); // Cierra el Drawer
               },
             ),
             const SizedBox(height: 30,),

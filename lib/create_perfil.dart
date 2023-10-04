@@ -1,4 +1,4 @@
-import 'dart:io';
+//import 'dart:io';
 import 'package:flutter/material.dart';
 import 'package:image_picker/image_picker.dart'; //Para implementar esta librería es necesario activar las opciones de desarrollador
 import 'package:ti3app/SettingsApp.dart';
@@ -167,18 +167,23 @@ class _ImagePickerState extends State<GetImage> {
                                   prefixIcon: Icon(Icons.person),
                                 ),
                               ),
-                              TextFormField(
-                                autocorrect: false,
-                                decoration:  const InputDecoration(
-                                  enabledBorder: UnderlineInputBorder(
-                                      borderSide: BorderSide(color: Colors.blueAccent)),
-                                  focusedBorder: UnderlineInputBorder(
-                                    borderSide: BorderSide(color: Colors.lightBlue,
-                                        width: 2),),
-                                  labelText: 'Contactos',
-                                  prefixIcon: Icon(Icons.person),
-                                ),
+                              Transform.translate(
+                                  offset: const Offset(-300,5),
+                                  child: MaterialButton(
+                                    padding: const EdgeInsets.symmetric(horizontal: 80, vertical: 25),
+                                    onPressed: (){
+
+                                    }, child:
+                                    const Text(
+                                      'Contactos',
+                                      style: TextStyle(
+                                        fontSize: 17.0,
+
+                                      ),
+                                    ),
+                                  ),
                               ),
+
                               TextFormField(
                                 autocorrect: false,
                                 decoration:  const InputDecoration(

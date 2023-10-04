@@ -19,5 +19,4 @@ class AppSettings extends StatelessWidget{
       ),
     );
   }
-
 }
