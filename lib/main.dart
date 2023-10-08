@@ -100,7 +100,7 @@ class _MyCombinedPageState extends State<MyCombinedPage> {
               },
             ),
             ListTile(
-              title: const Text('Chat social'),
+              title: const Text('Foro UCT'),
               onTap: () {
                 // Agrega aquí lo que deseas hacer cuando se toque la opción 2 en el Drawer
                 Navigator.pop(context); // Cierra el Drawer
