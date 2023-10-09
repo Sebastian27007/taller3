@@ -107,13 +107,6 @@ flutter:
     - assets/icons/carpeta1.jpeg
     - assets/icons/icono_perfil.png
     - assets/icons/logo_uct.png
-    - assets/images/
-    - assets/videos/
-    - assets/audios/
-    - assets/lottie_animations/
-    - assets/rive_animations/
-    - assets/pdfs/
-    - lib/Foro1_2.dart
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware
