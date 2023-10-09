@@ -106,6 +106,7 @@ flutter:
     - assets/icons/carpeta1.jpeg
     - assets/icons/icono_perfil.png
     - assets/icons/logo_uct.png
+    - lib/Screens/Foro1.2.dart
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware
