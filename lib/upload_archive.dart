@@ -4,6 +4,10 @@ import 'package:path/path.dart' as path;
 import 'package:path_provider/path_provider.dart';
 import 'package:image_picker/image_picker.dart';
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
+=======
+import 'package:file_picker/file_picker.dart';
+>>>>>>> Stashed changes
 =======
 import 'package:file_picker/file_picker.dart';
 >>>>>>> Stashed changes
@@ -16,6 +20,10 @@ class UploadArchive extends StatefulWidget {
 class _UploadArchiveState extends State<UploadArchive> {
   File? _image;
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
+=======
+  File? _pdfFile;
+>>>>>>> Stashed changes
 =======
   File? _pdfFile;
 >>>>>>> Stashed changes
@@ -26,6 +34,7 @@ class _UploadArchiveState extends State<UploadArchive> {
     if (pickedFile != null) {
       setState(() {
         _image = File(pickedFile.path);
+<<<<<<< Updated upstream
 <<<<<<< Updated upstream
       });
 
@@ -40,6 +49,8 @@ class _UploadArchiveState extends State<UploadArchive> {
 
     // Verifica si la carpeta del proyecto existe, y si no, créala.
 =======
+=======
+>>>>>>> Stashed changes
         _pdfFile = null;
       });
 
@@ -67,11 +78,15 @@ class _UploadArchiveState extends State<UploadArchive> {
     final directory = await getApplicationDocumentsDirectory();
     final projectFolderPath = directory.path + '/project_files';
 
+<<<<<<< Updated upstream
+>>>>>>> Stashed changes
+=======
 >>>>>>> Stashed changes
     if (!await Directory(projectFolderPath).exists()) {
       await Directory(projectFolderPath).create(recursive: true);
     }
 
+<<<<<<< Updated upstream
 <<<<<<< Updated upstream
     final imageName = 'image.png';
     final imagePath = path.join(projectFolderPath, imageName);
@@ -86,6 +101,8 @@ class _UploadArchiveState extends State<UploadArchive> {
   }
 
 =======
+=======
+>>>>>>> Stashed changes
     final filePath = path.join(projectFolderPath, fileName);
 
     try {
@@ -107,13 +124,20 @@ class _UploadArchiveState extends State<UploadArchive> {
     );
   }
 
+<<<<<<< Updated upstream
+>>>>>>> Stashed changes
+=======
 >>>>>>> Stashed changes
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
         title: Text('Guardar Imagen en Carpeta de Proyecto'),
+=======
+        title: Text('Guardar Archivo en Carpeta de Proyecto'),
+>>>>>>> Stashed changes
 =======
         title: Text('Guardar Archivo en Carpeta de Proyecto'),
 >>>>>>> Stashed changes
@@ -125,13 +149,19 @@ class _UploadArchiveState extends State<UploadArchive> {
             if (_image != null)
               Image.file(_image!)
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
             else
               Text('Selecciona una imagen'),
 =======
+=======
+>>>>>>> Stashed changes
             else if (_pdfFile != null)
               Text('Archivo PDF seleccionado: ${_pdfFile!.path}')
             else
               Text('Selecciona una imagen o un archivo PDF'),
+<<<<<<< Updated upstream
+>>>>>>> Stashed changes
+=======
 >>>>>>> Stashed changes
             SizedBox(height: 20),
             ElevatedButton(
@@ -139,12 +169,18 @@ class _UploadArchiveState extends State<UploadArchive> {
               child: Text('Seleccionar Imagen'),
             ),
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
 =======
+=======
+>>>>>>> Stashed changes
             SizedBox(height: 20),
             ElevatedButton(
               onPressed: _getPdf,
               child: Text('Seleccionar Archivo PDF'),
             ),
+<<<<<<< Updated upstream
+>>>>>>> Stashed changes
+=======
 >>>>>>> Stashed changes
           ],
         ),
@@ -152,7 +188,11 @@ class _UploadArchiveState extends State<UploadArchive> {
     );
   }
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
 }
+=======
+}
+>>>>>>> Stashed changes
 =======
 }
 >>>>>>> Stashed changes

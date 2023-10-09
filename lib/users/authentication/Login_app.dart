@@ -1,4 +1,10 @@
+<<<<<<< Updated upstream
 import 'package:flutter/material.dart';
+=======
+import 'dart:convert';
+import 'package:flutter/material.dart';
+import 'package:http/http.dart' as http;
+>>>>>>> Stashed changes
 
 class LoginApp extends StatelessWidget {
   const LoginApp({Key? key});
@@ -7,7 +13,10 @@ class LoginApp extends StatelessWidget {
   Widget build(BuildContext context) {
     final size = MediaQuery.of(context).size;
 
+<<<<<<< Updated upstream
     // Controladores para los campos de correo electrónico y contraseña
+=======
+>>>>>>> Stashed changes
     TextEditingController emailController = TextEditingController();
     TextEditingController passwordController = TextEditingController();
 
@@ -106,6 +115,7 @@ class LoginApp extends StatelessWidget {
                               ),
                               const SizedBox(height: 30,),
                               MaterialButton(
+<<<<<<< Updated upstream
                                 onPressed: () {
                                   // Verifica que los campos no estén vacíos
                                   if (emailController.text.isNotEmpty && passwordController.text.isNotEmpty) {
@@ -118,12 +128,43 @@ class LoginApp extends StatelessWidget {
                                       ScaffoldMessenger.of(context).showSnackBar(
                                         SnackBar(
                                           content: Text('Dominio de correo electrónico no válido. Solo se permiten "gmail.com" y "uct.com".'),
+=======
+                                onPressed: () async {
+                                  if (emailController.text.isNotEmpty && passwordController.text.isNotEmpty) {
+                                    final response = await http.post(
+                                      Uri.parse('http://127.0.0.1/api.php'),
+                                      body: {
+                                        'email': emailController.text,
+                                        'password': passwordController.text,
+                                      },
+                                    );
+
+                                    if (response.statusCode == 200) {
+                                      final data = json.decode(response.body);
+                                      if (data['success']) {
+                                        print('Inicio de sesión exitoso');
+                                      } else {
+                                        ScaffoldMessenger.of(context).showSnackBar(
+                                          SnackBar(
+                                            content: Text('Correo electrónico o contraseña incorrectos.'),
+                                            duration: Duration(seconds: 2),
+                                          ),
+                                        );
+                                      }
+                                    } else {
+                                      ScaffoldMessenger.of(context).showSnackBar(
+                                        SnackBar(
+                                          content: Text('Error en la conexión al servidor.'),
+>>>>>>> Stashed changes
                                           duration: Duration(seconds: 2),
                                         ),
                                       );
                                     }
                                   } else {
+<<<<<<< Updated upstream
                                     // Muestra un mensaje de error si los campos están vacíos
+=======
+>>>>>>> Stashed changes
                                     ScaffoldMessenger.of(context).showSnackBar(
                                       SnackBar(
                                         content: Text('Por favor, completa todos los campos.'),
@@ -170,3 +211,7 @@ class LoginApp extends StatelessWidget {
     );
   }
 }
+<<<<<<< Updated upstream
+=======
+
+>>>>>>> Stashed changes
