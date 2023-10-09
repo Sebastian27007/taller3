@@ -29,7 +29,7 @@ class ComunidadUCTHomePage extends StatefulWidget {
 }
 
 class _ComunidadUCTHomePageState extends State<ComunidadUCTHomePage> {
-  int _currentIndex = 0; // Índice seleccionado en la barra inferior
+  int _currentIndex = 0; // barra inferior
 
   @override
   Widget build(BuildContext context) {
@@ -40,7 +40,7 @@ class _ComunidadUCTHomePageState extends State<ComunidadUCTHomePage> {
           IconButton(
             icon: Icon(Icons.search),
             onPressed: () {
-              // Implementa la navegación a la pantalla de búsqueda.
+              // navegación a la pantalla de búsqueda.
               Navigator.push(
                 context,
                 MaterialPageRoute(
@@ -52,7 +52,7 @@ class _ComunidadUCTHomePageState extends State<ComunidadUCTHomePage> {
           IconButton(
             icon: Icon(Icons.mail_outline),
             onPressed: () {
-              // Implementa la navegación a los mensajes directos de la comunidad.
+              // navegación a los mensaje directo.
             },
           ),
         ],
@@ -71,7 +71,7 @@ class _ComunidadUCTHomePageState extends State<ComunidadUCTHomePage> {
       ),
       floatingActionButton: FloatingActionButton(
         onPressed: () {
-          // Implementa la funcionalidad para crear y publicar una nueva publicación.
+          // crear y publicar.
         },
         child: Icon(Icons.add),
       ),
@@ -82,7 +82,7 @@ class _ComunidadUCTHomePageState extends State<ComunidadUCTHomePage> {
             _currentIndex = index;
           });
           if (index == 1) {
-            // Implementa la navegación a la pantalla de búsqueda.
+            // navegación a la pantalla de búsqueda.
             Navigator.push(
               context,
               MaterialPageRoute(
@@ -110,14 +110,14 @@ class _ComunidadUCTHomePageState extends State<ComunidadUCTHomePage> {
     return ListView.builder(
       itemCount: 10, // Número de publicaciones a mostrar.
       itemBuilder: (BuildContext context, int index) {
-        // Aquí puedes construir y personalizar cada tarjeta de publicación.
+        // tarjeta de publicación.
         return Card(
           margin: EdgeInsets.all(8.0),
           child: Column(
             children: [
               ListTile(
                 leading: CircleAvatar(
-                  // Muestra la foto de perfil del usuario que hizo la publicación.
+                  // foto de perfil.
                   backgroundImage: AssetImage('assets/profile_image.png'),
                 ),
                 title: Text('Nombre de Usuario'),
@@ -127,7 +127,7 @@ class _ComunidadUCTHomePageState extends State<ComunidadUCTHomePage> {
                 padding: const EdgeInsets.all(8.0),
                 child: Text('Contenido de la publicación'),
               ),
-              // Agregar carrusel de imágenes (opcional)
+              // Carrusel de imágenes (opcional)
               if (index % 2 == 0) // Condición para incluir imágenes
                 CarouselSlider(
                   options: CarouselOptions(
@@ -165,7 +165,7 @@ class _ComunidadUCTHomePageState extends State<ComunidadUCTHomePage> {
                   IconButton(
                     icon: Icon(Icons.favorite_border),
                     onPressed: () {
-                      // Implementa la funcionalidad de "me gusta" para las publicaciones.
+                      // funcion de "me gusta" para las publicaciones.
                     },
                   ),
                 ],
