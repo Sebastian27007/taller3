@@ -74,6 +74,7 @@ dependencies:
   url_launcher_android: 6.0.27
   url_launcher_ios: 6.1.4
   url_launcher_platform_interface: 2.1.2
+  http: 0.13.6
 
   # The following adds the Cupertino Icons font to your application.
   # Use with the CupertinoIcons class for iOS style icons.
@@ -106,7 +107,13 @@ flutter:
     - assets/icons/carpeta1.jpeg
     - assets/icons/icono_perfil.png
     - assets/icons/logo_uct.png
-    - lib/Foro1.2.dart
+    - assets/images/
+    - assets/videos/
+    - assets/audios/
+    - assets/lottie_animations/
+    - assets/rive_animations/
+    - assets/pdfs/
+    - lib/Foro1_2.dart
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware
