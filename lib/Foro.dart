@@ -1,7 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:carousel_slider/carousel_slider.dart';
-import 'busqueda_screen.dart';
-
 
 void main() {
   runApp(ComunidadUCTApp());
@@ -14,6 +12,20 @@ class ComunidadUCTApp extends StatelessWidget {
       title: 'Comunidad UCT',
       theme: ThemeData(
         primarySwatch: Colors.blue,
+        appBarTheme: AppBarTheme(
+          color: Colors.blue, // Color de fondo de la AppBar
+        ),
+        textTheme: TextTheme(
+          headline6: TextStyle(
+            color: Colors.white, // Color del texto en la AppBar
+            fontSize: 20.0, // Tamaño del texto en la AppBar
+            fontWeight: FontWeight.bold, // Peso de la fuente del texto en la AppBar
+          ),
+        ),
+        tabBarTheme: TabBarTheme(
+          labelColor: Colors.white, // Color del texto de la pestaña seleccionada
+          unselectedLabelColor: Colors.white, // Color del texto de las pestañas no seleccionadas
+        ),
       ),
       home: DefaultTabController(
         length: 2, // Número de pestañas
@@ -23,24 +35,66 @@ class ComunidadUCTApp extends StatelessWidget {
   }
 }
 
+
+// Categorías
+class Categoria {
+  final String id;
+  final String nombre;
+
+  Categoria({required this.id, required this.nombre});
+}
+
+class Publicacion {
+  final String id;
+  final String contenido;
+  final List<Categoria> categorias;
+
+  Publicacion({required this.id, required this.contenido, required this.categorias});
+}
+
+List<Categoria> categorias = [
+  Categoria(id: '1', nombre: 'Política'),
+  Categoria(id: '2', nombre: 'Deportes'),
+  Categoria(id: '3', nombre: 'Tecnología'),
+];
+
+List<Publicacion> publicaciones = [
+  Publicacion(
+    id: '1',
+    contenido: 'Contenido de la publicación 1',
+    categorias: [categorias[0]], // Asocia la publicación a la categoría "Política"
+  ),
+  Publicacion(
+    id: '2',
+    contenido: 'Contenido de la publicación 2',
+    categorias: [categorias[1]], // Asocia la publicación a la categoría "Deportes"
+  ),
+  // Agrega más publicaciones con diferentes categorías según sea necesario
+];
+
 class ComunidadUCTHomePage extends StatefulWidget {
   @override
   _ComunidadUCTHomePageState createState() => _ComunidadUCTHomePageState();
 }
 
 class _ComunidadUCTHomePageState extends State<ComunidadUCTHomePage> {
-  int _currentIndex = 0; // barra inferior
+  int _currentIndex = 0; // Índice seleccionado en la barra inferior
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Comunidad UCT'),
+        title: Text(
+          'Comunidad UCT',
+          style: TextStyle(
+            color: Colors.white, // Cambia el color del título
+          ),
+        ),
         actions: [
           IconButton(
             icon: Icon(Icons.search),
             onPressed: () {
-              // navegación a la pantalla de búsqueda.
+              // Implementa la navegación a la pantalla de búsqueda.
               Navigator.push(
                 context,
                 MaterialPageRoute(
@@ -67,6 +121,10 @@ class _ComunidadUCTHomePageState extends State<ComunidadUCTHomePage> {
         children: [
           _buildTabContent('Importantes'),
           _buildTabContent('Otras Noticias'),
+          _buildTabContent('Todas'), // Pasa el título de la pestaña actual
+          _buildTabContent('Política'),
+          _buildTabContent('Deportes'),
+          _buildTabContent('Tecnología'),
         ],
       ),
       floatingActionButton: FloatingActionButton(
@@ -82,7 +140,7 @@ class _ComunidadUCTHomePageState extends State<ComunidadUCTHomePage> {
             _currentIndex = index;
           });
           if (index == 1) {
-            // navegación a la pantalla de búsqueda.
+            // Implementa la navegación a la pantalla de búsqueda.
             Navigator.push(
               context,
               MaterialPageRoute(
@@ -112,6 +170,7 @@ class _ComunidadUCTHomePageState extends State<ComunidadUCTHomePage> {
       itemBuilder: (BuildContext context, int index) {
         // tarjeta de publicación.
         return Card(
+          elevation: 4,
           margin: EdgeInsets.all(8.0),
           child: Column(
             children: [
@@ -132,7 +191,7 @@ class _ComunidadUCTHomePageState extends State<ComunidadUCTHomePage> {
                 CarouselSlider(
                   options: CarouselOptions(
                     height: 200.0,
-                    aspectRatio: 16 / 9,
+                    aspectRatio: 16/9,
                     enlargeCenterPage: true,
                   ),
                   items: [
@@ -141,16 +200,12 @@ class _ComunidadUCTHomePageState extends State<ComunidadUCTHomePage> {
                     'assets/image2.png',
                     // Agrega más imágenes si es necesario
                   ]
-                      .where((imageAsset) =>
-                  imageAsset != null) // Filtra imágenes nulas
+                      .where((imageAsset) => imageAsset != null) // Filtra imágenes nulas
                       .map((String imageAsset) {
                     return Builder(
                       builder: (BuildContext context) {
                         return Container(
-                          width: MediaQuery
-                              .of(context)
-                              .size
-                              .width,
+                          width: MediaQuery.of(context).size.width,
                           margin: EdgeInsets.symmetric(horizontal: 5.0),
                           child: Image.asset(imageAsset),
                         );
@@ -174,6 +229,49 @@ class _ComunidadUCTHomePageState extends State<ComunidadUCTHomePage> {
           ),
         );
       },
+    );
+  }
+}
+
+Widget _buildTabContent(String tabTitle) {
+  return ListView.builder(
+    itemCount: publicaciones.length,
+    itemBuilder: (BuildContext context, int index) {
+      Publicacion publicacion = publicaciones[index];
+
+      // Filtra las publicaciones por categoría si es necesario
+      if (tabTitle != 'Todas' &&
+          !publicacion.categorias.any((categoria) => categoria.nombre == tabTitle)) {
+        return Container(); // No muestra la publicación si no coincide con la categoría seleccionada
+      }
+
+      return Card(
+        elevation: 4,
+        margin: EdgeInsets.all(8.0),
+        child: Column(
+          children: [
+            ListTile(
+              title: Text(publicacion.contenido),
+              subtitle: Text('Categorías: ${publicacion.categorias.map((c) => c.nombre).join(', ')}'),
+            ),
+            // contenido de la publicación, como imágenes, botones, etc.
+          ],
+        ),
+      );
+    },
+  );
+}
+
+class BusquedaScreen extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(
+        title: Text('Búsqueda'),
+      ),
+      body: Center(
+        child: Text('Pantalla de búsqueda aquí'),
+      ),
     );
   }
 }
