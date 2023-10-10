@@ -4,11 +4,25 @@ import 'package:carousel_slider/carousel_slider.dart';
 void main() {
   runApp(ComunidadUCTApp());
 }
+class Comentario {
+  final String id;
+  final String contenido;
+  final String autor;
+  final DateTime fecha;
+
+  Comentario({
+    required this.id,
+    required this.contenido,
+    required this.autor,
+    required this.fecha,
+  });
+}
 
 class ComunidadUCTApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
+      debugShowCheckedModeBanner: false,
       title: 'Comunidad UCT',
       theme: ThemeData(
         primarySwatch: Colors.blue,
