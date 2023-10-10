@@ -161,8 +161,8 @@ class _MyCombinedPageState extends State<MyCombinedPage> {
                 color: Colors.blue,
                 icon: Image.asset(
                   'assets/icons/carpeta1.jpeg',
-                  width: 60,
-                  height: 60,
+                  width: 40,
+                  height: 40,
                 ),
               ),
               IconButton(
@@ -170,8 +170,8 @@ class _MyCombinedPageState extends State<MyCombinedPage> {
                 color: Colors.blue,
                 icon: Image.asset(
                   'assets/icons/carpeta1.jpeg',
-                  width: 60,
-                  height: 60,
+                  width: 40,
+                  height: 40,
                 ),
               ),
               IconButton(
@@ -179,8 +179,8 @@ class _MyCombinedPageState extends State<MyCombinedPage> {
                 color: Colors.blue,
                 icon: Image.asset(
                   'assets/icons/carpeta1.jpeg',
-                  width: 60,
-                  height: 60,
+                  width: 40,
+                  height: 40,
                 ),
               ),
               IconButton(
@@ -188,8 +188,8 @@ class _MyCombinedPageState extends State<MyCombinedPage> {
                 color: Colors.blue,
                 icon: Image.asset(
                   'assets/icons/carpeta1.jpeg',
-                  width: 60,
-                  height: 60,
+                  width: 40,
+                  height: 40,
                 ),
               ),
             ],
