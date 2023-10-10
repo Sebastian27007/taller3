@@ -1,19 +1,23 @@
 import 'package:flutter/material.dart';
 
 void main() {
-  runApp(MyApp());
+  runApp(const MyApp());
 }
 
 class MyApp extends StatelessWidget {
+  const MyApp({super.key});
+
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
+    return const MaterialApp(
       home: FormularioApp(),
     );
   }
 }
 
 class FormularioApp extends StatefulWidget {
+  const FormularioApp({super.key});
+
   @override
   _FormularioAppState createState() => _FormularioAppState();
 }
@@ -32,7 +36,7 @@ class _FormularioAppState extends State<FormularioApp> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Menú de registros de usuarios'),
+        title: const Text('Menú de registros de usuarios'),
       ),
       body: Padding(
         padding: const EdgeInsets.all(16.0),
@@ -41,7 +45,7 @@ class _FormularioAppState extends State<FormularioApp> {
           child: Column(
             children: <Widget>[
               TextFormField(
-                decoration: InputDecoration(labelText: 'Nombre'),
+                decoration: const InputDecoration(labelText: 'Nombre'),
                 validator: (value) {
                   if (value?.isEmpty ?? true) {
                     return 'Por favor, ingresa tu nombre';
@@ -53,7 +57,7 @@ class _FormularioAppState extends State<FormularioApp> {
                 },
               ),
               TextFormField(
-                decoration: InputDecoration(labelText: 'Apellido'),
+                decoration: const InputDecoration(labelText: 'Apellido'),
                 validator: (value) {
                   if (value?.isEmpty ?? true) {
                     return 'Por favor, ingresa tu apellido';
@@ -65,7 +69,7 @@ class _FormularioAppState extends State<FormularioApp> {
                 },
               ),
               TextFormField(
-                decoration: InputDecoration(labelText: 'Usuario'),
+                decoration: const InputDecoration(labelText: 'Usuario'),
                 validator: (value) {
                   if (value?.isEmpty ?? true) {
                     return 'Por favor, ingresa tu usuario';
@@ -77,7 +81,8 @@ class _FormularioAppState extends State<FormularioApp> {
                 },
               ),
               TextFormField(
-                decoration: InputDecoration(labelText: 'Correo electrónico'),
+                decoration:
+                    const InputDecoration(labelText: 'Correo electrónico'),
                 validator: (value) {
                   if (value?.isEmpty ?? true) {
                     return 'Por favor, ingresa tu correo electrónico';
@@ -92,7 +97,8 @@ class _FormularioAppState extends State<FormularioApp> {
                 },
               ),
               TextFormField(
-                decoration: InputDecoration(labelText: 'Número de teléfono'),
+                decoration:
+                    const InputDecoration(labelText: 'Número de teléfono'),
                 validator: (value) {
                   if (value?.isEmpty ?? true) {
                     return 'Por favor, ingresa tu número de teléfono';
@@ -107,7 +113,7 @@ class _FormularioAppState extends State<FormularioApp> {
                 },
               ),
               TextFormField(
-                decoration: InputDecoration(labelText: 'Contraseña'),
+                decoration: const InputDecoration(labelText: 'Contraseña'),
                 obscureText: true,
                 validator: (value) {
                   if (value?.isEmpty ?? true) {
@@ -119,9 +125,9 @@ class _FormularioAppState extends State<FormularioApp> {
                   _contrasena = value;
                 },
               ),
-              SizedBox(height: 20),
+              const SizedBox(height: 20),
               CheckboxListTile(
-                title: Text('Aceptar términos y condiciones'),
+                title: const Text('Aceptar términos y condiciones'),
                 value: _aceptarTerminos,
                 onChanged: (value) {
                   setState(() {
@@ -129,7 +135,7 @@ class _FormularioAppState extends State<FormularioApp> {
                   });
                 },
               ),
-              SizedBox(height: 20),
+              const SizedBox(height: 20),
               ElevatedButton(
                 onPressed: () {
                   if (_formKey.currentState?.validate() ?? false) {
@@ -139,7 +145,7 @@ class _FormularioAppState extends State<FormularioApp> {
                         context: context,
                         builder: (context) {
                           return AlertDialog(
-                            title: Text('Información del Formulario'),
+                            title: const Text('Información del Formulario'),
                             content: Column(
                               crossAxisAlignment: CrossAxisAlignment.start,
                               mainAxisSize: MainAxisSize.min,
@@ -149,7 +155,8 @@ class _FormularioAppState extends State<FormularioApp> {
                                 Text('Usuario: $_usuario'),
                                 Text('Correo Electrónico: $_email'),
                                 Text('Número de Teléfono: $_celular'),
-                                Text('Contraseña: ****'), // Contraseña oculta
+                                const Text(
+                                    'Contraseña: ****'), // Contraseña oculta
                               ],
                             ),
                             actions: <Widget>[
@@ -157,7 +164,7 @@ class _FormularioAppState extends State<FormularioApp> {
                                 onPressed: () {
                                   Navigator.of(context).pop();
                                 },
-                                child: Text('Cerrar'),
+                                child: const Text('Cerrar'),
                               ),
                             ],
                           );
@@ -168,15 +175,15 @@ class _FormularioAppState extends State<FormularioApp> {
                         context: context,
                         builder: (context) {
                           return AlertDialog(
-                            title: Text('Error'),
-                            content: Text(
+                            title: const Text('Error'),
+                            content: const Text(
                                 'Debes aceptar los términos y condiciones.'),
                             actions: <Widget>[
                               TextButton(
                                 onPressed: () {
                                   Navigator.of(context).pop();
                                 },
-                                child: Text('Cerrar'),
+                                child: const Text('Cerrar'),
                               ),
                             ],
                           );
@@ -185,7 +192,7 @@ class _FormularioAppState extends State<FormularioApp> {
                     }
                   }
                 },
-                child: Text('Enviar'),
+                child: const Text('Enviar'),
               ),
             ],
           ),
@@ -201,29 +208,29 @@ class _FormularioAppState extends State<FormularioApp> {
                   context: context,
                   builder: (context) {
                     return AlertDialog(
-                      title: Text('Cerrar Sesión'),
-                      content:
-                          Text('¿Estás seguro de que deseas cerrar sesión?'),
+                      title: const Text('Cerrar Sesión'),
+                      content: const Text(
+                          '¿Estás seguro de que deseas cerrar sesión?'),
                       actions: <Widget>[
                         TextButton(
                           onPressed: () {
                             // Implementar la lógica de cierre de sesión aquí
                             Navigator.of(context).pop();
                           },
-                          child: Text('Sí'),
+                          child: const Text('Sí'),
                         ),
                         TextButton(
                           onPressed: () {
                             Navigator.of(context).pop();
                           },
-                          child: Text('No'),
+                          child: const Text('No'),
                         ),
                       ],
                     );
                   },
                 );
               },
-              child: Text('Cerrar Sesión'),
+              child: const Text('Cerrar Sesión'),
             ),
             TextButton(
               onPressed: () {
@@ -231,53 +238,62 @@ class _FormularioAppState extends State<FormularioApp> {
                   context: context,
                   builder: (context) {
                     return AlertDialog(
-                      title: Text('Soporte'),
-                      content: Text(
-                          '¡Bienvenido al soporte! ¿En qué podemos ayudarte?'),
+                      title: const Text('Cambiar Idioma'),
+                      content: const Text('Selecciona tu idioma preferido:'),
                       actions: <Widget>[
                         TextButton(
                           onPressed: () {
-                            // Implementar la lógica para acceder al soporte aquí
+                            // Implementar la lógica para cambiar el idioma aquí
                             Navigator.of(context).pop();
                           },
-                          child: Text('Aceptar'),
+                          child: const Text('Español'),
+                        ),
+                        TextButton(
+                          onPressed: () {
+                            // Implementar la lógica para cambiar el idioma aquí
+                            Navigator.of(context).pop();
+                          },
+                          child: const Text('Inglés'),
                         ),
                       ],
                     );
                   },
                 );
               },
-              child: Text('Soporte'),
+              child: const Text('Cambiar Idioma'),
             ),
-            TextButton(
+            // Botón de ayuda y soporte
+            FloatingActionButton(
               onPressed: () {
                 showDialog(
                   context: context,
                   builder: (context) {
                     return AlertDialog(
-                      title: Text('Cambiar Idioma'),
-                      content: Text('Selecciona tu idioma preferido:'),
+                      title: const Text('Ayuda y Soporte'),
+                      content: const Text('¿En qué podemos ayudarte?'),
                       actions: <Widget>[
                         TextButton(
                           onPressed: () {
-                            // Implementar la lógica para cambiar el idioma aquí
+                            // Implementa la lógica para la ayuda aquí
                             Navigator.of(context).pop();
                           },
-                          child: Text('Español'),
+                          child: const Text('Ayuda'),
                         ),
                         TextButton(
                           onPressed: () {
-                            // Implementar la lógica para cambiar el idioma aquí
+                            // Implementa la lógica para el soporte aquí
                             Navigator.of(context).pop();
                           },
-                          child: Text('Inglés'),
+                          child: const Text('Soporte'),
                         ),
                       ],
                     );
                   },
                 );
               },
-              child: Text('Cambiar Idioma'),
+              child: const Icon(Icons.help_outline),
+              backgroundColor:
+                  Colors.blue, // Cambia el color según tus preferencias
             ),
           ],
         ),

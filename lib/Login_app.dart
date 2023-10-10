@@ -60,7 +60,7 @@ class LoginApp extends StatelessWidget{
                       children: <Widget>[
                         const SizedBox(height: 10,),
                         Text('Login',
-                          style: Theme.of(context).textTheme.headline4,),
+                          style: Theme.of(context).textTheme.headlineMedium,),
                         const SizedBox(height: 30,),
                         Form(
                           child: Column(
@@ -100,7 +100,7 @@ class LoginApp extends StatelessWidget{
                                 disabledColor: Colors.grey,
                                 color: Colors.deepPurpleAccent,
                                 child: Container(
-                                  padding: EdgeInsets.symmetric(horizontal: 80, vertical: 15),
+                                  padding: const EdgeInsets.symmetric(horizontal: 80, vertical: 15),
                                   child: const Text('Ingresar',
                                     style: TextStyle(
                                       color: Colors.white,
