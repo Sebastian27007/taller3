@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:ti3app/Login_app.dart';
+import 'package:ti3app/ChatPage.dart';
 
 void main() {
   runApp(const MyApp());
@@ -53,9 +54,12 @@ class _MyCombinedPageState extends State<MyCombinedPage> {
 
   // Las opciones que se muestran en el cuerpo de la página
   static const List<Widget> _widgetOptions = <Widget>[
-    Text('Index 0: Home', style: TextStyle(fontSize: 30, fontWeight: FontWeight.bold)),
-    Text('Index 1: Business', style: TextStyle(fontSize: 30, fontWeight: FontWeight.bold)),
-    Text('Index 2: School', style: TextStyle(fontSize: 30, fontWeight: FontWeight.bold)),
+    Text('Index 0: Home',
+        style: TextStyle(fontSize: 30, fontWeight: FontWeight.bold)),
+    Text('Index 1: Business',
+        style: TextStyle(fontSize: 30, fontWeight: FontWeight.bold)),
+    Text('Index 2: School',
+        style: TextStyle(fontSize: 30, fontWeight: FontWeight.bold)),
   ];
 
   void _onItemTapped(int index) {
@@ -68,7 +72,8 @@ class _MyCombinedPageState extends State<MyCombinedPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: const Text(MyApp.appTitle)), // Usar el título de MyApp
+      appBar:
+          AppBar(title: const Text(MyApp.appTitle)), // Usar el título de MyApp
       drawer: Drawer(
         child: ListView(
           padding: EdgeInsets.zero,
@@ -98,10 +103,14 @@ class _MyCombinedPageState extends State<MyCombinedPage> {
                 Navigator.pop(context); // Cierra el Drawer
               },
             ),
-            const SizedBox(height: 30,),
             const SizedBox(
-              child: Text('Versión 1.0',
-              textAlign: TextAlign.center,),
+              height: 30,
+            ),
+            const SizedBox(
+              child: Text(
+                'Versión 1.0',
+                textAlign: TextAlign.center,
+              ),
             )
           ],
         ),
@@ -197,7 +206,9 @@ class _MyCombinedPageState extends State<MyCombinedPage> {
               ),
               MaterialButton(
                 onPressed: () {
-                  Navigator.push(context, MaterialPageRoute(builder: (context) => const LoginApp()),
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(builder: (context) => const LoginApp()),
                   );
                 },
                 padding:
@@ -214,25 +225,25 @@ class _MyCombinedPageState extends State<MyCombinedPage> {
           ),
         ],
       ),
-   bottomNavigationBar: BottomNavigationBar(
-  items: const <BottomNavigationBarItem>[
-    BottomNavigationBarItem(
-      icon: Icon(Icons.home),
-      label: 'Inicio',
-    ),
-    BottomNavigationBarItem(
-      icon: Icon(Icons.chat),
-      label: 'Chatbot',
-    ),
-    BottomNavigationBarItem(
-      icon: Icon(Icons.settings),
-      label: 'Ajustes',
-    ),
-  ],
-  currentIndex: _selectedIndex,
-  selectedItemColor: Colors.blue,
-  onTap: _onItemTapped,
-),
+      bottomNavigationBar: BottomNavigationBar(
+        items: const <BottomNavigationBarItem>[
+          BottomNavigationBarItem(
+            icon: Icon(Icons.home),
+            label: 'Inicio',
+          ),
+          BottomNavigationBarItem(
+            icon: Icon(Icons.chat),
+            label: 'Chatbot',
+          ),
+          BottomNavigationBarItem(
+            icon: Icon(Icons.settings),
+            label: 'Ajustes',
+          ),
+        ],
+        currentIndex: _selectedIndex,
+        selectedItemColor: Colors.blue,
+        onTap: _onItemTapped,
+      ),
     );
   }
 }
