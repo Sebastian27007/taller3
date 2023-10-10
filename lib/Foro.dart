@@ -1,9 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:carousel_slider/carousel_slider.dart';
 
-void main() {
-  runApp(ComunidadUCTApp());
-}
 class Comentario {
   final String id;
   final String contenido;

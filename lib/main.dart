@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:ti3app/Login_app.dart';
 //import 'package:ti3app/Login_app.dart';
 import 'package:ti3app/create_perfil.dart';
-
+import 'package:ti3app/Foro.dart';
 
 class MyApp extends StatelessWidget {
   const MyApp({super.key});
@@ -98,10 +98,10 @@ class _MyCombinedPageState extends State<MyCombinedPage> {
               },
             ),
             ListTile(
-              title: const Text('Chat social'),
+              title: const Text('Foro UCT'),
               onTap: () {
                 // Agrega aquí lo que deseas hacer cuando se toque la opción 2 en el Drawer
-                Navigator.pop(context); // Cierra el Drawer
+                Navigator.push(context, MaterialPageRoute(builder: (context) => ComunidadUCTApp()),);
               },
             ),
             ListTile(
