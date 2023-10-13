@@ -1,9 +1,8 @@
-// ignore_for_file: unused_field
-
 import 'package:flutter/material.dart';
-import 'package:ti3app/Login_app.dart';
 //import 'package:ti3app/Login_app.dart';
-import 'package:ti3app/create_perfil.dart';
+import 'package:ti3app/Routes/Routes.dart';
+//import 'package:ti3app/Login_app.dart';
+//import 'package:ti3app/create_perfil.dart';
 
 
 class MyApp extends StatelessWidget {
@@ -15,6 +14,7 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
+      routes: routes,
       debugShowCheckedModeBanner: false,
       title: appTitle,
       home: const MyCombinedPage(),
@@ -73,6 +73,7 @@ class _MyCombinedPageState extends State<MyCombinedPage> {
 
   @override
   Widget build(BuildContext context) {
+    final size = MediaQuery.of(context).size;
     return Scaffold(
       appBar: AppBar(title: const Text(MyApp.appTitle)), // Usar el título de MyApp
       drawer: Drawer(
@@ -87,8 +88,7 @@ class _MyCombinedPageState extends State<MyCombinedPage> {
               title: const Text('Mi perfil'),
               onTap: () {
                 // Agrega aquí lo que deseas hacer cuando se toque la opción 3 en el Drawer
-                Navigator.push(context, MaterialPageRoute(builder: (context) => UserPerfil()),
-                );
+                Navigator.pushNamed(context, '/perfil');
                 //Navigator.pop(context); // Cierra el Drawer, para agregar la acción elimina esta línea o comentala porque no permite agregar otro navigator
               },
             ),
@@ -116,8 +116,7 @@ class _MyCombinedPageState extends State<MyCombinedPage> {
             ListTile(
               title: const Text('Cerrar sesión'),
               onTap: () {
-                Navigator.push(context, MaterialPageRoute(builder: (context) => LoginApp()),
-                );
+                Navigator.pushNamed(context, '/Login');
                 // Agrega aquí lo que deseas hacer cuando se toque la opción 3 en el Drawer
                 //Navigator.pop(context); // Cierra el Drawer
               },
@@ -130,8 +129,22 @@ class _MyCombinedPageState extends State<MyCombinedPage> {
           ],
         ),
       ),
-      body: Column(
+      body: Center(
+        child: Container(
+          width: double.infinity,
+          decoration: const BoxDecoration(
+            gradient: LinearGradient(colors: [Colors.blue, Colors.lightGreenAccent],
+              begin: Alignment.topRight,
+              end: Alignment.bottomLeft,
+            ),
+          ),
+          //color: Colors.purpleAccent,
+          height: size.height * 1.0,
+          child: ListView(
+            children: [
+              Column(
         children: <Widget>[
+          const SizedBox(height: 30,),
           MaterialButton(
             onPressed: () {},
             padding: const EdgeInsets.symmetric(horizontal: 80, vertical: 25),
@@ -149,59 +162,83 @@ class _MyCombinedPageState extends State<MyCombinedPage> {
             children: <Widget>[
               SizedBox(
                 width: MediaQuery.of(context).size.width,
-                child: Text('Recursos de la plataforma',
-                    textAlign: TextAlign.left,
-                    style: Theme.of(context).textTheme.headline2),
-              ),
-            ],
-          ),
-          Row(
-            mainAxisAlignment: MainAxisAlignment.spaceAround,
-            children: <Widget>[
-              IconButton(
-                onPressed: () {},
-                color: Colors.blue,
-                icon: Image.asset(
-                  'assets/icons/carpeta1.jpeg',
-                  width: 60,
-                  height: 60,
-                ),
-              ),
-              IconButton(
-                onPressed: () {},
-                color: Colors.blue,
-                icon: Image.asset(
-                  'assets/icons/carpeta1.jpeg',
-                  width: 60,
-                  height: 60,
-                ),
-              ),
-              IconButton(
-                onPressed: () {},
-                color: Colors.blue,
-                icon: Image.asset(
-                  'assets/icons/carpeta1.jpeg',
-                  width: 60,
-                  height: 60,
-                ),
-              ),
-              IconButton(
-                onPressed: () {},
-                color: Colors.blue,
-                icon: Image.asset(
-                  'assets/icons/carpeta1.jpeg',
-                  width: 60,
-                  height: 60,
+                child: const Text('Recursos de la plataforma',
+                    textAlign: TextAlign.center,
+                    style: TextStyle(
+                      color: Colors.black,
+                      fontSize: 30.0,
+                      fontWeight: FontWeight.normal,
+                    ),
+                    
                 ),
               ),
             ],
           ),
+          Container(
+            padding: const EdgeInsets.all(20),
+            width: double.infinity,
+            height: 100,
+            margin: const EdgeInsets.symmetric(horizontal: 30),
+            decoration: BoxDecoration(
+              color: Colors.white,
+              borderRadius: BorderRadius.circular(25),
+              boxShadow:const [
+                BoxShadow(
+                  color: Colors.black12,
+                  blurRadius: 15,
+                  offset: Offset(0, 5),
+                  ),
+                ],
+              ),
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.spaceAround,
+                children: <Widget>[
+                  IconButton(
+                    onPressed: () {},
+                    color: Colors.blue,
+                    icon: Image.asset(
+                      'assets/icons/carpeta1.jpeg',
+                      width: 60,
+                      height: 60,
+                    ),
+                  ),
+                  IconButton(
+                    onPressed: () {},
+                    color: Colors.blue,
+                    icon: Image.asset(
+                      'assets/icons/carpeta1.jpeg',
+                      width: 60,
+                      height: 60,
+                    ),
+                  ),
+                  IconButton(
+                    onPressed: () {},
+                    color: Colors.blue,
+                    icon: Image.asset(
+                      'assets/icons/carpeta1.jpeg',
+                      width: 60,
+                      height: 60,
+                    ),
+                  ),
+                  IconButton(
+                    onPressed: () {},
+                    color: Colors.blue,
+                    icon: Image.asset(
+                      'assets/icons/carpeta1.jpeg',
+                      width: 60,
+                      height: 60,
+                    ),
+                  ),
+                ],
+              ),
+          ),
+          const SizedBox(height: 20,),
           SizedBox(
             width: MediaQuery.of(context).size.width,
             child: Text(
               'Redes sociales',
-              textAlign: TextAlign.left,
-              style: Theme.of(context).textTheme.headline2,
+              textAlign: TextAlign.center,
+              style: Theme.of(context).textTheme.headline4,
             ),
           ),
           const SizedBox(
@@ -216,7 +253,7 @@ class _MyCombinedPageState extends State<MyCombinedPage> {
                     const EdgeInsets.symmetric(horizontal: 80, vertical: 25),
                 shape: RoundedRectangleBorder(
                     borderRadius: BorderRadius.circular(20.0)),
-                color: Colors.lightBlue,
+                color: Colors.blueAccent,
                 child: const Text(
                   'Asesores',
                   style: TextStyle(color: Colors.white),
@@ -231,7 +268,7 @@ class _MyCombinedPageState extends State<MyCombinedPage> {
                     const EdgeInsets.symmetric(horizontal: 80, vertical: 25),
                 shape: RoundedRectangleBorder(
                     borderRadius: BorderRadius.circular(20.0)),
-                color: Colors.green,
+                color: Colors.blueAccent,
                 child: const Text(
                   'Profesores',
                   style: TextStyle(color: Colors.white),
@@ -241,6 +278,11 @@ class _MyCombinedPageState extends State<MyCombinedPage> {
           ),
         ],
       ),
+            ],
+          ),
+        )
+      ),
+       
    bottomNavigationBar: BottomNavigationBar(
   items: const <BottomNavigationBarItem>[
     BottomNavigationBarItem(

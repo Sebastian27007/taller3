@@ -1,11 +1,9 @@
-//import 'dart:io';
-// ignore_for_file: unused_field
-
 import 'package:flutter/material.dart';
 import 'package:image_picker/image_picker.dart'; //Para implementar esta librería es necesario activar las opciones de desarrollador
-import 'package:ti3app/SettingsApp.dart';
-import 'package:ti3app/contacts.dart';
-import 'package:ti3app/main.dart';
+import 'package:ti3app/Routes/Routes.dart';
+//import 'package:ti3app/SettingsApp.dart';
+//import 'package:ti3app/contacts.dart';
+//import 'package:ti3app/main.dart';
 
 class UserPerfil extends StatelessWidget {
   @override
@@ -13,9 +11,7 @@ class UserPerfil extends StatelessWidget {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       home: GetImage(),
-      routes: {
-        '/contactos': (context) => contactsApp(),
-      },
+      routes: routes
     );
   }
 }
@@ -53,13 +49,13 @@ class _ImagePickerState extends State<GetImage> {
             Icons.arrow_back,
             color: Colors.black,
           ), onPressed: () {
-          Navigator.push(context, MaterialPageRoute(builder: (context) => const MyApp()),
+          Navigator.pushNamed(context, '/home'
             );
           },
         ),
         actions: [
           IconButton(onPressed: (){
-            Navigator.push(context, MaterialPageRoute(builder: (context) => AppSettings()),
+            Navigator.pushNamed(context, '/opciones'
             );
           },
               icon: const Icon(Icons.settings,
