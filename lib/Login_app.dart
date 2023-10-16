@@ -49,7 +49,7 @@ class LoginApp extends StatelessWidget{
                   Container(
                     padding: const EdgeInsets.all(20),
                     width: double.infinity,
-                    height: 350,
+                    height: 400,
                     margin: const EdgeInsets.symmetric(horizontal: 30),
                     decoration: BoxDecoration(
                         color: Colors.white,
@@ -105,7 +105,7 @@ class LoginApp extends StatelessWidget{
                                 disabledColor: Colors.grey,
                                 color: Colors.blueAccent,
                                 child: Container(
-                                  padding: const EdgeInsets.symmetric(horizontal: 80, vertical: 15),
+                                  padding: const EdgeInsets.symmetric(horizontal: 50, vertical: 15),
                                   child: const Text('Ingresar',
                                     style: TextStyle(
                                       color: Colors.white,

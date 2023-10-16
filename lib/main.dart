@@ -75,7 +75,8 @@ class _MyCombinedPageState extends State<MyCombinedPage> {
   Widget build(BuildContext context) {
     final size = MediaQuery.of(context).size;
     return Scaffold(
-      appBar: AppBar(title: const Text(MyApp.appTitle)), // Usar el título de MyApp
+      appBar: AppBar(title: const Text(MyApp.appTitle),
+      backgroundColor: Colors.white,), // Usar el título de MyApp
       drawer: Drawer(
         child: ListView(
           padding: EdgeInsets.zero,
@@ -158,26 +159,10 @@ class _MyCombinedPageState extends State<MyCombinedPage> {
             ),
           ),
           const SizedBox(height: 20),
-          Column(
-            children: <Widget>[
-              SizedBox(
-                width: MediaQuery.of(context).size.width,
-                child: const Text('Recursos de la plataforma',
-                    textAlign: TextAlign.center,
-                    style: TextStyle(
-                      color: Colors.black,
-                      fontSize: 30.0,
-                      fontWeight: FontWeight.normal,
-                    ),
-                    
-                ),
-              ),
-            ],
-          ),
           Container(
             padding: const EdgeInsets.all(20),
             width: double.infinity,
-            height: 100,
+            height: 400,
             margin: const EdgeInsets.symmetric(horizontal: 30),
             decoration: BoxDecoration(
               color: Colors.white,
@@ -190,98 +175,115 @@ class _MyCombinedPageState extends State<MyCombinedPage> {
                   ),
                 ],
               ),
-              child: Row(
-                mainAxisAlignment: MainAxisAlignment.spaceAround,
-                children: <Widget>[
-                  IconButton(
-                    onPressed: () {},
-                    color: Colors.blue,
-                    icon: Image.asset(
-                      'assets/icons/carpeta1.jpeg',
-                      width: 60,
-                      height: 60,
+              child: Column(
+                children: [
+                  Text('Recursos/Archivos',
+                  style: Theme.of(context).textTheme.headline4,),
+                  const SizedBox(height: 20,),
+                  Card(
+                    elevation: 5,
+                    color: Colors.blueAccent,
+                    margin: const EdgeInsets.all(5),
+                    child: ListTile(
+                        title: const Text('Recursos Subidos',
+                        style: TextStyle(
+                          color: Colors.white,
+                          ),
+                        ),
+                        trailing: const Icon(
+                        Icons.book_online_outlined,
+                          color: Colors.white,
+                          ),
+                          onTap: (){                     //aqui se agrega la funcionalidad
+                          }
+                      ),
+                    ),
+                  Card(
+                    elevation: 5,
+                    color: Colors.blueAccent,
+                    margin: const EdgeInsets.all(5),
+                    child: ListTile(
+                        title: const Text('Subir Archivo',
+                        style: TextStyle(
+                          color: Colors.white,
+                            ),
+                          ),
+                        trailing: const Icon(
+                        Icons.arrow_circle_up,
+                          color: Colors.white,
+                          ),
+                          onTap: (){                     //aqui se agrega la funcionalidad
+                          }
+                        ),
+                  ),
+                  Card(
+                    elevation: 5,
+                    color: Colors.blueAccent,
+                    margin: const EdgeInsets.all(5),
+                    child: ListTile(
+                        title: const Text('Eliminar Archivo',
+                        style: TextStyle(
+                          color: Colors.white,
+                            ),
+                          ),
+                        trailing: const Icon(
+                        Icons.delete,
+                          color: Colors.white,
+                          ),
+                          onTap: (){                     //aqui se agrega la funcionalidad
+                          }
+                        ),
+                    ),
+                  const SizedBox(height: 20,),
+                  SizedBox(
+                    width: MediaQuery.of(context).size.width,
+                    child: Text(
+                      'Redes sociales',
+                      textAlign: TextAlign.center,
+                      style: Theme.of(context).textTheme.headline4,
                     ),
                   ),
-                  IconButton(
-                    onPressed: () {},
-                    color: Colors.blue,
-                    icon: Image.asset(
-                      'assets/icons/carpeta1.jpeg',
-                      width: 60,
-                      height: 60,
-                    ),
-                  ),
-                  IconButton(
-                    onPressed: () {},
-                    color: Colors.blue,
-                    icon: Image.asset(
-                      'assets/icons/carpeta1.jpeg',
-                      width: 60,
-                      height: 60,
-                    ),
-                  ),
-                  IconButton(
-                    onPressed: () {},
-                    color: Colors.blue,
-                    icon: Image.asset(
-                      'assets/icons/carpeta1.jpeg',
-                      width: 60,
-                      height: 60,
-                    ),
+                  const SizedBox(height: 20,),
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceAround,
+                    children: <Widget>[
+                      MaterialButton(
+                        onPressed: () {},
+                        padding:
+                            const EdgeInsets.symmetric(horizontal: 80, vertical: 25),
+                        shape: RoundedRectangleBorder(
+                            borderRadius: BorderRadius.circular(20.0)),
+                        color: Colors.blueAccent,
+                        child: const Text(
+                          'Asesores',
+                          style: TextStyle(color: Colors.white),
+                        ),
+                      ),
+                      MaterialButton(
+                        onPressed: () {
+                          //Navigator.push(context, MaterialPageRoute(builder: (context) => LoginApp()),
+                          //);
+                        },
+                        padding:
+                            const EdgeInsets.symmetric(horizontal: 80, vertical: 25),
+                        shape: RoundedRectangleBorder(
+                            borderRadius: BorderRadius.circular(20.0)),
+                        color: Colors.blueAccent,
+                        child: const Text(
+                          'Profesores',
+                          style: TextStyle(color: Colors.white),
+                        ),
+                      ),
+                    ],
                   ),
                 ],
-              ),
-          ),
-          const SizedBox(height: 20,),
-          SizedBox(
-            width: MediaQuery.of(context).size.width,
-            child: Text(
-              'Redes sociales',
-              textAlign: TextAlign.center,
-              style: Theme.of(context).textTheme.headline4,
             ),
-          ),
-          const SizedBox(
-            height: 20,
-          ),
-          Row(
-            mainAxisAlignment: MainAxisAlignment.spaceAround,
-            children: <Widget>[
-              MaterialButton(
-                onPressed: () {},
-                padding:
-                    const EdgeInsets.symmetric(horizontal: 80, vertical: 25),
-                shape: RoundedRectangleBorder(
-                    borderRadius: BorderRadius.circular(20.0)),
-                color: Colors.blueAccent,
-                child: const Text(
-                  'Asesores',
-                  style: TextStyle(color: Colors.white),
-                ),
-              ),
-              MaterialButton(
-                onPressed: () {
-                  //Navigator.push(context, MaterialPageRoute(builder: (context) => LoginApp()),
-                  //);
-                },
-                padding:
-                    const EdgeInsets.symmetric(horizontal: 80, vertical: 25),
-                shape: RoundedRectangleBorder(
-                    borderRadius: BorderRadius.circular(20.0)),
-                color: Colors.blueAccent,
-                child: const Text(
-                  'Profesores',
-                  style: TextStyle(color: Colors.white),
-                ),
-              ),
-            ],
-          ),
+          ),   
         ],
       ),
-            ],
-          ),
-        )
-      ),
+    ],
+  ),
+)),
        
    bottomNavigationBar: BottomNavigationBar(
   items: const <BottomNavigationBarItem>[
