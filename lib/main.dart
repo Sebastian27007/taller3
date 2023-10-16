@@ -1,26 +1,21 @@
 import 'dart:io';
 import 'package:flutter/material.dart';
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
 import 'package:path/path.dart' as path;
 import 'package:path_provider/path_provider.dart';
 import 'package:image_picker/image_picker.dart';
-=======
 import 'package:ti3app/Login_app.dart';
 import 'package:ti3app/upload_archive.dart';
 import 'package:ti3app/screen_asesores.dart';
->>>>>>> Stashed changes
-=======
 import 'package:ti3app/users/authentication/Login_app.dart';
 import 'package:ti3app/upload_archive.dart';
 import 'package:ti3app/screen_asesores.dart';
->>>>>>> Stashed changes
-=======
 import 'package:ti3app/users/authentication/Login_app.dart';
 import 'package:ti3app/upload_archive.dart';
 import 'package:ti3app/screen_asesores.dart';
->>>>>>> Stashed changes
+import 'package:ti3app/login_app.dart';
+import 'package:ti3app/create_perfil.dart';
+import 'package:ti3app/archives/upload_archive.dart';
+import 'package:get/get.dart';
 
 void main() {
   runApp(MaterialApp(
@@ -92,47 +87,6 @@ class _MyHomePageState extends State<MyHomePage> {
           ],
         ),
       ),
-<<<<<<< Updated upstream
-=======
-      body: Column(
-        children: <Widget>[
-          MaterialButton(
-            onPressed: () {},
-            padding: const EdgeInsets.symmetric(horizontal: 80, vertical: 25),
-            shape: RoundedRectangleBorder(
-                borderRadius: BorderRadius.circular(20.0)),
-            color: Colors.deepPurpleAccent,
-            child: const Text(
-              'Servicio de asesorías',
-              textAlign: TextAlign.left,
-              style: TextStyle(fontSize: 36, color: Colors.white),
-            ),
-          ),
-          const SizedBox(height: 20),
-          Column(
-            children: <Widget>[
-              SizedBox(
-                width: MediaQuery.of(context).size.width,
-                child: Text('Recursos de la plataforma',
-                    textAlign: TextAlign.left,
-                    style: Theme.of(context).textTheme.headline2),
-              ),
-            ],
-          ),
-          Row(
-            mainAxisAlignment: MainAxisAlignment.spaceAround,
-            children: <Widget>[
-              IconButton(
-                onPressed: () {},
-                color: Colors.blue,
-                icon: Image.asset(
-                  'assets/icons/carpeta1.jpeg',
-                  width: 60,
-                  height: 60,
-                ),
-              ),
-              IconButton(
-                onPressed: () {},
                 icon: Image.asset(
                   'assets/icons/carpeta1.jpeg',
                   width: 60,
