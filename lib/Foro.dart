@@ -1,5 +1,10 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_dialogs/flutter_dialogs.dart';
 import 'package:carousel_slider/carousel_slider.dart';
+
+void main() {
+  runApp(ComunidadUCTApp());
+}
 
 class Comentario {
   final String id;
@@ -80,7 +85,11 @@ List<Publicacion> publicaciones = [
     contenido: 'Contenido de la publicación 2',
     categorias: [categorias[1]], // Asocia la publicación a la categoría "Deportes"
   ),
-  // Agrega más publicaciones con diferentes categorías según sea necesario
+  Publicacion(
+    id: '3',
+    contenido: 'Contenido de la publicación 1',
+    categorias: [categorias[2]], // Asocia la publicación a la categoría "Tecnologia"
+  ),
 ];
 
 class ComunidadUCTHomePage extends StatefulWidget {
@@ -132,10 +141,6 @@ class _ComunidadUCTHomePageState extends State<ComunidadUCTHomePage> {
         children: [
           _buildTabContent('Importantes'),
           _buildTabContent('Otras Noticias'),
-          _buildTabContent('Todas'), // Pasa el título de la pestaña actual
-          _buildTabContent('Política'),
-          _buildTabContent('Deportes'),
-          _buildTabContent('Tecnología'),
         ],
       ),
       floatingActionButton: FloatingActionButton(
@@ -179,7 +184,6 @@ class _ComunidadUCTHomePageState extends State<ComunidadUCTHomePage> {
     return ListView.builder(
       itemCount: 10, // Número de publicaciones a mostrar.
       itemBuilder: (BuildContext context, int index) {
-        // tarjeta de publicación.
         return Card(
           elevation: 4,
           margin: EdgeInsets.all(8.0),
@@ -188,27 +192,29 @@ class _ComunidadUCTHomePageState extends State<ComunidadUCTHomePage> {
               ListTile(
                 leading: CircleAvatar(
                   // foto de perfil.
-                  backgroundImage: AssetImage('assets/profile_image.png'),
+                  backgroundImage: AssetImage('assets/icons/icono_perfil.png'),
                 ),
-                title: Text('Nombre de Usuario'),
+                title: Text('UCT Administración'),
                 subtitle: Text(tabTitle), // Muestra el título de la pestaña.
               ),
               Padding(
                 padding: const EdgeInsets.all(8.0),
-                child: Text('Contenido de la publicación'),
+                child: Text('Universidad comprometida con el aprendizaje'),
               ),
               // Carrusel de imágenes (opcional)
               if (index % 2 == 0) // Condición para incluir imágenes
                 CarouselSlider(
                   options: CarouselOptions(
-                    height: 200.0,
+                    height: 600.0,
                     aspectRatio: 16/9,
                     enlargeCenterPage: true,
                   ),
                   items: [
-                    'assets/image0.png',
-                    'assets/image1.png',
-                    'assets/image2.png',
+                    'assets/imageforo/image0.png',
+                    'assets/imageforo/image1.png',
+                    'assets/imageforo/image2.png',
+                    'assets/imageforo/image3.png',
+                    'assets/imageforo/image4.png',
                     // Agrega más imágenes si es necesario
                   ]
                       .where((imageAsset) => imageAsset != null) // Filtra imágenes nulas
@@ -286,3 +292,4 @@ class BusquedaScreen extends StatelessWidget {
     );
   }
 }
+
