@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "601528028924",
+    "project_id": "tecnoeduca-2db15",
+    "storage_bucket": "tecnoeduca-2db15.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:601528028924:android:863894330bd061e1911179",
+        "android_client_info": {
+          "package_name": "Tecno_Educa.UCT"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "601528028924-1n588ms5mr0a0u4leehdjlkktu5qp4h5.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "Tecno_Educa.UCT",
+            "certificate_hash": "2f4799624196124474e66d22abef67afaa6b6096"
+          }
+        },
+        {
+          "client_id": "601528028924-m4q5nlr7rimnf1nndgetbbnaalot23s6.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCTCGGXyb9n0cOrvPg85AWsDsADDQCyVp4"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "601528028924-m4q5nlr7rimnf1nndgetbbnaalot23s6.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
