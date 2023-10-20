@@ -41,6 +41,9 @@ dependencies:
   shared_preferences: ^2.0.15
   file_picker: ^4.0.0
   path_provider: ^2.0.5
+  flutter_dialogs: ^3.0.0
+  carousel_slider: ^4.2.1
+
 
 dev_dependencies:
   flutter_test:
@@ -69,7 +72,11 @@ flutter:
     - assets/icons/carpeta1.jpeg
     - assets/icons/icono_perfil.png
     - assets/icons/logo_uct.png
-
+    - assets/imageforo/image0.png
+    - assets/imageforo/image1.png
+    - assets/imageforo/image2.png
+    - assets/imageforo/image3.png
+    - assets/imageforo/image4.png
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware
 

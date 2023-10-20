@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:ti3app/Login_app.dart';
 import 'package:ti3app/create_perfil.dart';
-
+import 'package:ti3app/Foro.dart';
 
 class MyApp extends StatelessWidget {
   const MyApp({super.key});
@@ -34,9 +34,9 @@ class MyApp extends StatelessWidget {
             color: Color(0xFF18FFFF),
           ),
           headline6: TextStyle(
-              fontSize: 20.0,
-              fontWeight: FontWeight.bold,
-              color: Color(0xFF1DE9B6),
+            fontSize: 20.0,
+            fontWeight: FontWeight.bold,
+            color: Color(0xFF1DE9B6),
           ),
         ),
       ),
@@ -56,9 +56,12 @@ class _MyCombinedPageState extends State<MyCombinedPage> {
 
   // Las opciones que se muestran en el cuerpo de la página
   static const List<Widget> _widgetOptions = <Widget>[
-    Text('Index 0: Home', style: TextStyle(fontSize: 30, fontWeight: FontWeight.bold)),
-    Text('Index 1: Business', style: TextStyle(fontSize: 30, fontWeight: FontWeight.bold)),
-    Text('Index 2: School', style: TextStyle(fontSize: 30, fontWeight: FontWeight.bold)),
+    Text('Index 0: Home',
+        style: TextStyle(fontSize: 30, fontWeight: FontWeight.bold)),
+    Text('Index 1: Business',
+        style: TextStyle(fontSize: 30, fontWeight: FontWeight.bold)),
+    Text('Index 2: School',
+        style: TextStyle(fontSize: 30, fontWeight: FontWeight.bold)),
   ];
 
   void _onItemTapped(int index) {
@@ -71,7 +74,8 @@ class _MyCombinedPageState extends State<MyCombinedPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: const Text(MyApp.appTitle)), // Usar el título de MyApp
+      appBar:
+          AppBar(title: const Text(MyApp.appTitle)), // Usar el título de MyApp
       drawer: Drawer(
         child: ListView(
           padding: EdgeInsets.zero,
@@ -84,7 +88,9 @@ class _MyCombinedPageState extends State<MyCombinedPage> {
               title: const Text('Mi perfil'),
               onTap: () {
                 // Agrega aquí lo que deseas hacer cuando se toque la opción 3 en el Drawer
-                Navigator.push(context, MaterialPageRoute(builder: (context) => UserPerfil()),
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(builder: (context) => UserPerfil()),
                 );
                 //Navigator.pop(context); // Cierra el Drawer, para agregar la acción elimina esta línea o comentala porque no permite agregar otro navigator
               },
@@ -97,10 +103,13 @@ class _MyCombinedPageState extends State<MyCombinedPage> {
               },
             ),
             ListTile(
-              title: const Text('Chat social'),
+              title: const Text('Foro UCT'),
               onTap: () {
                 // Agrega aquí lo que deseas hacer cuando se toque la opción 2 en el Drawer
-                Navigator.pop(context); // Cierra el Drawer
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(builder: (context) => ComunidadUCTApp()),
+                );
               },
             ),
             ListTile(
@@ -113,16 +122,22 @@ class _MyCombinedPageState extends State<MyCombinedPage> {
             ListTile(
               title: const Text('Cerrar sesión'),
               onTap: () {
-                Navigator.push(context, MaterialPageRoute(builder: (context) => LoginScreen()),
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(builder: (context) => LoginScreen()),
                 );
                 // Agrega aquí lo que deseas hacer cuando se toque la opción 3 en el Drawer
                 //Navigator.pop(context); // Cierra el Drawer
               },
             ),
-            const SizedBox(height: 30,),
             const SizedBox(
-              child: Text('Versión 1.0',
-              textAlign: TextAlign.center,),
+              height: 30,
+            ),
+            const SizedBox(
+              child: Text(
+                'Versión 1.0',
+                textAlign: TextAlign.center,
+              ),
             )
           ],
         ),
@@ -238,24 +253,24 @@ class _MyCombinedPageState extends State<MyCombinedPage> {
           ),
         ],
       ),
-   bottomNavigationBar: BottomNavigationBar(
-  items: const <BottomNavigationBarItem>[
-    BottomNavigationBarItem(
-      icon: Icon(Icons.home),
-      label: 'Inicio',
-    ),
-    BottomNavigationBarItem(
-      icon: Icon(Icons.chat),
-      label: 'Chatbot',
-    ),
-    BottomNavigationBarItem(
-      icon: Icon(Icons.settings),
-      label: 'Ajustes',
-    ),
-  ],
-  currentIndex: _selectedIndex,
-  selectedItemColor: Colors.blue,
-  onTap: _onItemTapped,
+      bottomNavigationBar: BottomNavigationBar(
+        items: const <BottomNavigationBarItem>[
+          BottomNavigationBarItem(
+            icon: Icon(Icons.home),
+            label: 'Inicio',
+          ),
+          BottomNavigationBarItem(
+            icon: Icon(Icons.chat),
+            label: 'Chatbot',
+          ),
+          BottomNavigationBarItem(
+            icon: Icon(Icons.settings),
+            label: 'Ajustes',
+          ),
+        ],
+        currentIndex: _selectedIndex,
+        selectedItemColor: Colors.blue,
+        onTap: _onItemTapped,
       ),
     );
   }
