@@ -10,7 +10,6 @@ import 'package:ti3app/model/user_preferences.dart';
 import 'package:ti3app/main.dart';
 import 'package:ti3app/signup_screen.dart';
 
-
 void main() {
   WidgetsFlutterBinding.ensureInitialized();
   runApp(const MyApp());
@@ -78,7 +77,7 @@ class _LoginScreenState extends State<LoginScreen>{
     return Scaffold(
       appBar: AppBar(
         title: const Text('Inicio'),
-        backgroundColor: Colors.blue, // Puedes cambiar a otro color según tu preferencia
+        backgroundColor: Colors.white, // Puedes cambiar a otro color según tu preferencia
       ),
       body: SizedBox(
         width: double.infinity,
