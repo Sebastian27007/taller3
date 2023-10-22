@@ -1,9 +1,7 @@
 import 'package:flutter/material.dart';
-//import 'package:ti3app/Login_app.dart';
-import 'package:ti3app/Routes/Routes.dart';
-//import 'package:ti3app/Login_app.dart';
-//import 'package:ti3app/create_perfil.dart';
-
+import 'package:ti3app/Login_app.dart';
+import 'package:ti3app/create_perfil.dart';
+import 'package:ti3app/Foro.dart';
 
 class MyApp extends StatelessWidget {
   const MyApp({super.key});
@@ -14,7 +12,6 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      routes: routes,
       debugShowCheckedModeBanner: false,
       title: appTitle,
       home: const MyCombinedPage(),
@@ -37,9 +34,9 @@ class MyApp extends StatelessWidget {
             color: Color(0xFF18FFFF),
           ),
           headline6: TextStyle(
-              fontSize: 20.0,
-              fontWeight: FontWeight.bold,
-              color: Color(0xFF1DE9B6),
+            fontSize: 20.0,
+            fontWeight: FontWeight.bold,
+            color: Color(0xFF1DE9B6),
           ),
         ),
       ),
@@ -59,9 +56,12 @@ class _MyCombinedPageState extends State<MyCombinedPage> {
 
   // Las opciones que se muestran en el cuerpo de la página
   static const List<Widget> _widgetOptions = <Widget>[
-    Text('Index 0: Home', style: TextStyle(fontSize: 30, fontWeight: FontWeight.bold)),
-    Text('Index 1: Business', style: TextStyle(fontSize: 30, fontWeight: FontWeight.bold)),
-    Text('Index 2: School', style: TextStyle(fontSize: 30, fontWeight: FontWeight.bold)),
+    Text('Index 0: Home',
+        style: TextStyle(fontSize: 30, fontWeight: FontWeight.bold)),
+    Text('Index 1: Business',
+        style: TextStyle(fontSize: 30, fontWeight: FontWeight.bold)),
+    Text('Index 2: School',
+        style: TextStyle(fontSize: 30, fontWeight: FontWeight.bold)),
   ];
 
   void _onItemTapped(int index) {
@@ -75,8 +75,8 @@ class _MyCombinedPageState extends State<MyCombinedPage> {
   Widget build(BuildContext context) {
     final size = MediaQuery.of(context).size;
     return Scaffold(
-      appBar: AppBar(title: const Text(MyApp.appTitle),
-      backgroundColor: Colors.white,), // Usar el título de MyApp
+      appBar:
+          AppBar(title: const Text(MyApp.appTitle)), // Usar el título de MyApp
       drawer: Drawer(
         child: ListView(
           padding: EdgeInsets.zero,
@@ -89,7 +89,10 @@ class _MyCombinedPageState extends State<MyCombinedPage> {
               title: const Text('Mi perfil'),
               onTap: () {
                 // Agrega aquí lo que deseas hacer cuando se toque la opción 3 en el Drawer
-                Navigator.pushNamed(context, '/perfil');
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(builder: (context) => UserPerfil()),
+                );
                 //Navigator.pop(context); // Cierra el Drawer, para agregar la acción elimina esta línea o comentala porque no permite agregar otro navigator
               },
             ),
@@ -104,7 +107,10 @@ class _MyCombinedPageState extends State<MyCombinedPage> {
               title: const Text('Foro UCT'),
               onTap: () {
                 // Agrega aquí lo que deseas hacer cuando se toque la opción 2 en el Drawer
-                Navigator.pop(context); // Cierra el Drawer
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(builder: (context) => ComunidadUCTApp()),
+                );
               },
             ),
             ListTile(
@@ -117,192 +123,198 @@ class _MyCombinedPageState extends State<MyCombinedPage> {
             ListTile(
               title: const Text('Cerrar sesión'),
               onTap: () {
-                Navigator.pushNamed(context, '/Login');
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(builder: (context) => LoginScreen()),
+                );
                 // Agrega aquí lo que deseas hacer cuando se toque la opción 3 en el Drawer
                 //Navigator.pop(context); // Cierra el Drawer
               },
             ),
-            const SizedBox(height: 30,),
             const SizedBox(
-              child: Text('Versión 1.0',
-              textAlign: TextAlign.center,),
+              height: 30,
+            ),
+            const SizedBox(
+              child: Text(
+                'Versión 1.0',
+                textAlign: TextAlign.center,
+              ),
             )
           ],
         ),
       ),
       body: Center(
-        child: Container(
-          width: double.infinity,
-          decoration: const BoxDecoration(
-            gradient: LinearGradient(colors: [Colors.blue, Colors.lightGreenAccent],
-              begin: Alignment.topRight,
-              end: Alignment.bottomLeft,
-            ),
-          ),
-          //color: Colors.purpleAccent,
-          height: size.height * 1.0,
-          child: ListView(
-            children: [
-              Column(
-        children: <Widget>[
-          const SizedBox(height: 30,),
-          MaterialButton(
-            onPressed: () {},
-            padding: const EdgeInsets.symmetric(horizontal: 80, vertical: 25),
-            shape: RoundedRectangleBorder(
-                borderRadius: BorderRadius.circular(20.0)),
-            color: Colors.blueAccent,
-            child: const Text(
-              'Servicio de asesorías',
-              textAlign: TextAlign.left,
-              style: TextStyle(fontSize: 36, color: Colors.white),
-            ),
-          ),
-          const SizedBox(height: 20),
-          Container(
-            padding: const EdgeInsets.all(20),
+          child: Container(
             width: double.infinity,
-            height: 400,
-            margin: const EdgeInsets.symmetric(horizontal: 30),
-            decoration: BoxDecoration(
-              color: Colors.white,
-              borderRadius: BorderRadius.circular(25),
-              boxShadow:const [
-                BoxShadow(
-                  color: Colors.black12,
-                  blurRadius: 15,
-                  offset: Offset(0, 5),
-                  ),
-                ],
+            decoration: const BoxDecoration(
+              gradient: LinearGradient(colors: [Colors.blue, Colors.lightGreenAccent],
+                begin: Alignment.topRight,
+                end: Alignment.bottomLeft,
               ),
-              child: Column(
-                children: [
-                  Text('Recursos/Archivos',
-                  style: Theme.of(context).textTheme.headline4,),
-                  const SizedBox(height: 20,),
-                  Card(
-                    elevation: 5,
-                    color: Colors.blueAccent,
-                    margin: const EdgeInsets.all(5),
-                    child: ListTile(
-                        title: const Text('Recursos Subidos',
-                        style: TextStyle(
-                          color: Colors.white,
-                          ),
-                        ),
-                        trailing: const Icon(
-                        Icons.book_online_outlined,
-                          color: Colors.white,
-                          ),
-                          onTap: (){                     //aqui se agrega la funcionalidad
-                          }
-                      ),
-                    ),
-                  Card(
-                    elevation: 5,
-                    color: Colors.blueAccent,
-                    margin: const EdgeInsets.all(5),
-                    child: ListTile(
-                        title: const Text('Subir Archivo',
-                        style: TextStyle(
-                          color: Colors.white,
-                            ),
-                          ),
-                        trailing: const Icon(
-                        Icons.arrow_circle_up,
-                          color: Colors.white,
-                          ),
-                          onTap: (){                     //aqui se agrega la funcionalidad
-                          }
-                        ),
-                  ),
-                  Card(
-                    elevation: 5,
-                    color: Colors.blueAccent,
-                    margin: const EdgeInsets.all(5),
-                    child: ListTile(
-                        title: const Text('Eliminar Archivo',
-                        style: TextStyle(
-                          color: Colors.white,
-                            ),
-                          ),
-                        trailing: const Icon(
-                        Icons.delete,
-                          color: Colors.white,
-                          ),
-                          onTap: (){                     //aqui se agrega la funcionalidad
-                          }
-                        ),
-                    ),
-                  const SizedBox(height: 20,),
-                  SizedBox(
-                    width: MediaQuery.of(context).size.width,
-                    child: Text(
-                      'Redes sociales',
-                      textAlign: TextAlign.center,
-                      style: Theme.of(context).textTheme.headline4,
-                    ),
-                  ),
-                  const SizedBox(height: 20,),
-                  Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceAround,
-                    children: <Widget>[
-                      MaterialButton(
-                        onPressed: () {},
-                        padding:
-                            const EdgeInsets.symmetric(horizontal: 80, vertical: 25),
-                        shape: RoundedRectangleBorder(
-                            borderRadius: BorderRadius.circular(20.0)),
-                        color: Colors.blueAccent,
-                        child: const Text(
-                          'Asesores',
-                          style: TextStyle(color: Colors.white),
-                        ),
-                      ),
-                      MaterialButton(
-                        onPressed: () {
-                          //Navigator.push(context, MaterialPageRoute(builder: (context) => LoginApp()),
-                          //);
-                        },
-                        padding:
-                            const EdgeInsets.symmetric(horizontal: 80, vertical: 25),
-                        shape: RoundedRectangleBorder(
-                            borderRadius: BorderRadius.circular(20.0)),
-                        color: Colors.blueAccent,
-                        child: const Text(
-                          'Profesores',
-                          style: TextStyle(color: Colors.white),
-                        ),
-                      ),
-                    ],
-                  ),
-                ],
             ),
-          ),   
+            //color: Colors.purpleAccent,
+            height: size.height * 1.0,
+            child: ListView(
+              children: [
+                Column(
+                  children: <Widget>[
+                    const SizedBox(height: 30,),
+                    MaterialButton(
+                      onPressed: () {},
+                      padding: const EdgeInsets.symmetric(horizontal: 80, vertical: 25),
+                      shape: RoundedRectangleBorder(
+                          borderRadius: BorderRadius.circular(20.0)),
+                      color: Colors.blueAccent,
+                      child: const Text(
+                        'Servicio de asesorías',
+                        textAlign: TextAlign.left,
+                        style: TextStyle(fontSize: 36, color: Colors.white),
+                      ),
+                    ),
+                    const SizedBox(height: 20),
+                    Container(
+                      padding: const EdgeInsets.all(20),
+                      width: double.infinity,
+                      height: 400,
+                      margin: const EdgeInsets.symmetric(horizontal: 30),
+                      decoration: BoxDecoration(
+                        color: Colors.white,
+                        borderRadius: BorderRadius.circular(25),
+                        boxShadow:const [
+                          BoxShadow(
+                            color: Colors.black12,
+                            blurRadius: 15,
+                            offset: Offset(0, 5),
+                          ),
+                        ],
+                      ),
+                      child: Column(
+                        children: [
+                          Text('Recursos/Archivos',
+                            style: Theme.of(context).textTheme.headline4,),
+                          const SizedBox(height: 20,),
+                          Card(
+                            elevation: 5,
+                            color: Colors.blueAccent,
+                            margin: const EdgeInsets.all(5),
+                            child: ListTile(
+                                title: const Text('Recursos Subidos',
+                                  style: TextStyle(
+                                    color: Colors.white,
+                                  ),
+                                ),
+                                trailing: const Icon(
+                                  Icons.book_online_outlined,
+                                  color: Colors.white,
+                                ),
+                                onTap: (){                     //aqui se agrega la funcionalidad
+                                }
+                            ),
+                          ),
+                          Card(
+                            elevation: 5,
+                            color: Colors.blueAccent,
+                            margin: const EdgeInsets.all(5),
+                            child: ListTile(
+                                title: const Text('Subir Archivo',
+                                  style: TextStyle(
+                                    color: Colors.white,
+                                  ),
+                                ),
+                                trailing: const Icon(
+                                  Icons.arrow_circle_up,
+                                  color: Colors.white,
+                                ),
+                                onTap: (){                     //aqui se agrega la funcionalidad
+                                }
+                            ),
+                          ),
+                          Card(
+                            elevation: 5,
+                            color: Colors.blueAccent,
+                            margin: const EdgeInsets.all(5),
+                            child: ListTile(
+                                title: const Text('Eliminar Archivo',
+                                  style: TextStyle(
+                                    color: Colors.white,
+                                  ),
+                                ),
+                                trailing: const Icon(
+                                  Icons.delete,
+                                  color: Colors.white,
+                                ),
+                                onTap: (){                     //aqui se agrega la funcionalidad
+                                }
+                            ),
+                          ),
+                          const SizedBox(height: 20,),
+                          SizedBox(
+                            width: MediaQuery.of(context).size.width,
+                            child: Text(
+                              'Redes sociales',
+                              textAlign: TextAlign.center,
+                              style: Theme.of(context).textTheme.headline4,
+                            ),
+                          ),
+                          const SizedBox(height: 20,),
+                          Row(
+                            mainAxisAlignment: MainAxisAlignment.spaceAround,
+                            children: <Widget>[
+                              MaterialButton(
+                                onPressed: () {},
+                                padding:
+                                const EdgeInsets.symmetric(horizontal: 80, vertical: 25),
+                                shape: RoundedRectangleBorder(
+                                    borderRadius: BorderRadius.circular(20.0)),
+                                color: Colors.blueAccent,
+                                child: const Text(
+                                  'Asesores',
+                                  style: TextStyle(color: Colors.white),
+                                ),
+                              ),
+                              MaterialButton(
+                                onPressed: () {
+                                  //Navigator.push(context, MaterialPageRoute(builder: (context) => LoginApp()),
+                                  //);
+                                },
+                                padding:
+                                const EdgeInsets.symmetric(horizontal: 80, vertical: 25),
+                                shape: RoundedRectangleBorder(
+                                    borderRadius: BorderRadius.circular(20.0)),
+                                color: Colors.blueAccent,
+                                child: const Text(
+                                  'Profesores',
+                                  style: TextStyle(color: Colors.white),
+                                ),
+                              ),
+                            ],
+                          ),
+                        ],
+                      ),
+                    ),
+                  ],
+                ),
+              ],
+            ),
+          )),
+      bottomNavigationBar: BottomNavigationBar(
+        items: const <BottomNavigationBarItem>[
+          BottomNavigationBarItem(
+            icon: Icon(Icons.home),
+            label: 'Inicio',
+          ),
+          BottomNavigationBarItem(
+            icon: Icon(Icons.chat),
+            label: 'Chatbot',
+          ),
+          BottomNavigationBarItem(
+            icon: Icon(Icons.settings),
+            label: 'Ajustes',
+          ),
         ],
-      ),
-    ],
-  ),
-)),
-       
-   bottomNavigationBar: BottomNavigationBar(
-  items: const <BottomNavigationBarItem>[
-    BottomNavigationBarItem(
-      icon: Icon(Icons.home),
-      label: 'Inicio',
-    ),
-    BottomNavigationBarItem(
-      icon: Icon(Icons.chat),
-      label: 'Chatbot',
-    ),
-    BottomNavigationBarItem(
-      icon: Icon(Icons.settings),
-      label: 'Ajustes',
-    ),
-  ],
-  currentIndex: _selectedIndex,
-  selectedItemColor: Colors.blue,
-  onTap: _onItemTapped,
+        currentIndex: _selectedIndex,
+        selectedItemColor: Colors.blue,
+        onTap: _onItemTapped,
       ),
     );
   }
