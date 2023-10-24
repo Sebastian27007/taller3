@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:ti3app/main.dart';
 
 class PopupWindow extends StatefulWidget {
   @override
@@ -34,7 +35,8 @@ class _PopupWindowState extends State<PopupWindow> {
       actions: [
         TextButton(
           onPressed: () {
-            // Acción al presionar el botón
+            Navigator.push(context, MaterialPageRoute(builder: (context) => MyApp()),
+            );
           },
           child: Text('Cerrar'),
         ),
