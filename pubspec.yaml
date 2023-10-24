@@ -43,6 +43,8 @@ dependencies:
   path_provider: ^2.0.5
   permission_handler: ^11.0.1
   dio: ^5.3.3
+  firebase_core: ^latest_version
+  firebase_messaging: ^latest_version
 
 
 dev_dependencies:
