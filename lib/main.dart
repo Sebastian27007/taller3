@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:ti3app/Login_app.dart';
+import 'package:ti3app/chat_bot.dart';
 import 'package:ti3app/create_perfil.dart';
 import 'package:ti3app/Foro.dart';
 
@@ -121,6 +122,16 @@ class _MyCombinedPageState extends State<MyCombinedPage> {
               },
             ),
             ListTile(
+              title: const Text('Chat Bot'),
+              onTap: () {
+                // Agrega aquí lo que deseas hacer cuando se toque la opción 3 en el Drawer
+               Navigator.push(
+                  context,
+                  MaterialPageRoute(builder: (context) => Chatbot()),
+                );
+              },
+            ),
+            ListTile(
               title: const Text('Cerrar sesión'),
               onTap: () {
                 Navigator.push(
@@ -175,7 +186,7 @@ class _MyCombinedPageState extends State<MyCombinedPage> {
                     Container(
                       padding: const EdgeInsets.all(20),
                       width: double.infinity,
-                      height: 400,
+                      height: 450,
                       margin: const EdgeInsets.symmetric(horizontal: 30),
                       decoration: BoxDecoration(
                         color: Colors.white,
@@ -263,7 +274,7 @@ class _MyCombinedPageState extends State<MyCombinedPage> {
                               MaterialButton(
                                 onPressed: () {},
                                 padding:
-                                const EdgeInsets.symmetric(horizontal: 80, vertical: 25),
+                                const EdgeInsets.symmetric(horizontal: 40, vertical: 25),
                                 shape: RoundedRectangleBorder(
                                     borderRadius: BorderRadius.circular(20.0)),
                                 color: Colors.blueAccent,
@@ -278,7 +289,7 @@ class _MyCombinedPageState extends State<MyCombinedPage> {
                                   //);
                                 },
                                 padding:
-                                const EdgeInsets.symmetric(horizontal: 80, vertical: 25),
+                                const EdgeInsets.symmetric(horizontal: 40, vertical: 25),
                                 shape: RoundedRectangleBorder(
                                     borderRadius: BorderRadius.circular(20.0)),
                                 color: Colors.blueAccent,
