@@ -72,7 +72,7 @@ class _HomeState extends State<Home> {
     );
   }
 
-  sendMessage(String text) async {
+ sendMessage(String text) async {
     if (text.isEmpty) {
       print('Message is empty');
     } else {
@@ -84,7 +84,7 @@ class _HomeState extends State<Home> {
           queryInput: QueryInput(text: TextInput(text: text)));
       if (response.message == null) return;
       setState(() {
-        addMessage(response.message!);
+        addMessage(response.message!, false);
       });
     }
   }
