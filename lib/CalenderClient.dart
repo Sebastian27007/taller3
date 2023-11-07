@@ -1,15 +1,13 @@
 import 'dart:developer';
-
-import 'package:flutter/material.dart';
 import "package:googleapis_auth/auth_io.dart";
 import 'package:googleapis/calendar/v3.dart';
 import 'package:url_launcher/url_launcher.dart';
 
 class CalendarClient {
-  static const _scopes = const [CalendarApi.CalendarScope];
+  static const _scopes =  [CalendarApi.calendarScope];
 
   insert(title, startTime, endTime) {
-    var _clientID = new ClientId("YOUR_CLIENT_ID", "");
+    var _clientID = new ClientId("530455036442-gq78i8mci9ta2220oth4pvu8gam9ssan.apps.googleusercontent.com", "");
     clientViaUserConsent(_clientID, _scopes, prompt).then((AuthClient client) {
       var calendar = CalendarApi(client);
       calendar.calendarList.list().then((value) => print("VAL________$value"));
@@ -54,3 +52,4 @@ class CalendarClient {
       throw 'Could not launch $url';
     }
   }
+}
