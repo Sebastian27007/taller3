@@ -3,6 +3,8 @@ import 'package:ti3app/Login_app.dart';
 //import 'package:ti3app/Login_app.dart';
 import 'package:ti3app/create_perfil.dart';
 import 'package:ti3app/Foro.dart';
+import 'package:http/http.dart' as http;
+import 'package:html/parser.dart' show parse;
 
 class MyApp extends StatelessWidget {
   const MyApp({super.key});
@@ -44,9 +46,29 @@ class MyApp extends StatelessWidget {
     );
   }
 }
+final response = await http.get(Uri.parse('https://dte.uct.cl/'));
+
+// recuperar datos o recursos con Json
+  if (response.statusCode == 200) {
+    print('Contenido de la página web: ${response.body}');
+  } else {
+    throw Exception('Error al cargar la página web');
+  }
+  // extraer datos especificos
+  final document = parse(response.body);
+
+final title = document.querySelector('title');
+if (title != null) {
+  // Si se encuentra un título, podemos acceder a su texto.
+    print('Título de la página: ${title.text}');
+  } else {
+    print('No se encontró el título de la página');
+  }
 
 class MyCombinedPage extends StatefulWidget {
   const MyCombinedPage({super.key});
+
+  // Mostrar la web
 
   @override
   _MyCombinedPageState createState() => _MyCombinedPageState();
