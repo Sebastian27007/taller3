@@ -1,0 +1,1 @@
+Mover esta carpeta dentro de la carpeta "htdocs" en la carpeta de XAMPP

@@ -205,7 +205,7 @@ class _ComunidadUCTHomePageState extends State<ComunidadUCTHomePage> {
               if (index % 2 == 0) // Condición para incluir imágenes
                 CarouselSlider(
                   options: CarouselOptions(
-                    height: 600.0,
+                    height: 400.0,
                     aspectRatio: 16/9,
                     enlargeCenterPage: true,
                   ),
