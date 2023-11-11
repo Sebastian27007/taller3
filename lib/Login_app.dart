@@ -7,7 +7,7 @@ import 'package:ti3app/api_connection/api_connection.dart';
 import 'package:ti3app/model/user.dart';
 import 'package:fluttertoast/fluttertoast.dart';
 import 'package:ti3app/model/user_preferences.dart';
-import 'package:ti3app/main.dart';
+//import 'package:ti3app/main.dart';
 import 'package:ti3app/signup_screen.dart';
 
 void main() {
@@ -206,7 +206,7 @@ class _LoginScreenState extends State<LoginScreen>{
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
                       const Text(
-                        '¿No tiene cuenta?',
+                        '¿No tienes cuenta?',
                       ),
                       TextButton(
                         onPressed: (){

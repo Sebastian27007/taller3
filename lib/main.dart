@@ -3,7 +3,12 @@ import 'package:ti3app/Login_app.dart';
 import 'package:ti3app/chat_bot.dart';
 import 'package:ti3app/create_perfil.dart';
 import 'package:ti3app/Foro.dart';
+import 'package:ti3app/resources.dart';
 
+/*void main(){
+  runApp(MyApp());
+}
+*/
 class MyApp extends StatelessWidget {
   const MyApp({super.key});
 
@@ -208,18 +213,19 @@ class _MyCombinedPageState extends State<MyCombinedPage> {
                             elevation: 5,
                             color: Colors.blueAccent,
                             margin: const EdgeInsets.all(5),
-                            child: ListTile(
-                                title: const Text('Recursos Subidos',
+                            child: InkWell(
+                                onTap: (){
+                                  Navigator.of(context).push(MaterialPageRoute(builder: (context) => enlaces()));              //aqui se agrega la funcionalidad
+                                },
+                                child: const ListTile(title: Text('Recursos De la Plataforma',
                                   style: TextStyle(
                                     color: Colors.white,
                                   ),
                                 ),
-                                trailing: const Icon(
+                                trailing: Icon(
                                   Icons.book_online_outlined,
                                   color: Colors.white,
-                                ),
-                                onTap: (){                     //aqui se agrega la funcionalidad
-                                }
+                                ),),
                             ),
                           ),
                           Card(

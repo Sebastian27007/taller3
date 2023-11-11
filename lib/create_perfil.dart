@@ -148,8 +148,9 @@ class _ImagePickerState extends State<GetImage> {
                               ),
                             ],
                           ),
-                          child: Column(
+                          child: Container(
                             
+                            child: Column(),
                           ),
                         ),
                       ],

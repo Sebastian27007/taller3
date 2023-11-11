@@ -1,7 +1,10 @@
 import 'package:dialog_flowtter/dialog_flowtter.dart';
 import 'package:flutter/material.dart';
 import 'package:ti3app/Messages.dart';
-void main() => runApp(Chatbot());
+
+void main(){
+  runApp(Chatbot());
+}
 
 class Chatbot extends StatelessWidget {
   const Chatbot({Key? key}) : super(key: key);
