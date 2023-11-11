@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:ti3app/Login_app.dart';
 import 'package:ti3app/create_perfil.dart';
 import 'package:ti3app/Foro.dart';
+import 'package:ti3app/advisor.dart';
 
 class MyApp extends StatelessWidget {
   const MyApp({super.key});
@@ -274,6 +275,8 @@ class _MyCombinedPageState extends State<MyCombinedPage> {
                               ),
                               MaterialButton(
                                 onPressed: () {
+                                  Navigator.push(context,MaterialPageRoute(builder: (context) => AdvisorsPage()));
+
                                   //Navigator.push(context, MaterialPageRoute(builder: (context) => LoginApp()),
                                   //);
                                 },
