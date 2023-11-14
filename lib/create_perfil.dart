@@ -4,6 +4,10 @@ import 'package:image_picker/image_picker.dart'; //Para implementar esta librer√
 import 'package:ti3app/SettingsApp.dart';
 import 'package:ti3app/main.dart';
 
+void main(){
+  runApp(UserPerfil());
+}
+
 class UserPerfil extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
@@ -148,9 +152,32 @@ class _ImagePickerState extends State<GetImage> {
                               ),
                             ],
                           ),
-                          child: Container(
-                            
-                            child: Column(),
+                          child: Column(
+                            children: [
+                              SizedBox(height: 0,),
+                              Text('Mi Cuenta',
+                              style: TextStyle(fontSize: 30),),
+                              SizedBox(height: 10,),
+                              Card(
+                                elevation: 5,
+                                color: Colors.blueAccent,
+                                margin: const EdgeInsets.all(5),
+                                child: InkWell(
+                                    onTap: (){
+                                      Navigator.of(context).push(MaterialPageRoute(builder: (context) => enlaces()));              //aqui se agrega la funcionalidad
+                                    },
+                                    child: const ListTile(title: Text('Nombre',
+                                      style: TextStyle(
+                                        color: Colors.white,
+                                      ),
+                                    ),
+                                    trailing: Icon(
+                                      Icons.book_online_outlined,
+                                      color: Colors.white,
+                                    ),),
+                                ),
+                              ),
+                            ],
                           ),
                         ),
                       ],
