@@ -1,11 +1,11 @@
 {
-    "name": "appmovil",
-    "short_name": "appmovil",
+    "name": "taller3",
+    "short_name": "taller3",
     "start_url": ".",
     "display": "standalone",
     "background_color": "#0175C2",
     "theme_color": "#0175C2",
-    "description": ""Aplicacion movil"",
+    "description": "A new Flutter project.",
     "orientation": "portrait-primary",
     "prefer_related_applications": false,
     "icons": [
