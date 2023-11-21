@@ -158,13 +158,13 @@ class _ImagePickerState extends State<GetImage> {
                               Text('Mi Cuenta',
                               style: TextStyle(fontSize: 30),),
                               SizedBox(height: 10,),
-                              Card(
+                              Card( 
                                 elevation: 5,
                                 color: Colors.blueAccent,
                                 margin: const EdgeInsets.all(5),
                                 child: InkWell(
                                     onTap: (){
-                                      Navigator.of(context).push(MaterialPageRoute(builder: (context) => enlaces()));              //aqui se agrega la funcionalidad
+                                     // Navigator.of(context).push(MaterialPageRoute(builder: (context) => ()));              //aqui se agrega la funcionalidad
                                     },
                                     child: const ListTile(title: Text('Nombre',
                                       style: TextStyle(

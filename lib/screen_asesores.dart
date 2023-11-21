@@ -1,6 +1,8 @@
 import 'dart:convert';
 import 'package:flutter/material.dart';
 import 'package:http/http.dart' as http;
+import 'package:ti3app/calendario.dart';
+import 'package:ti3app/asesor_data_page.dart';
 
 void main() {
   runApp(AsesoresApp());
@@ -53,7 +55,9 @@ class _MyHomePageState extends State<MyHomePage> {
       itemBuilder: (context, index) {
         return ElevatedButton(
           onPressed: () {
-            //Al presionar los botones debería aparecer la pestaña para agendar horas
+            Navigator.of(context).push(MaterialPageRoute(
+              builder: (context) => AsesorDetailPage(asesorData: asesoresData[index],),
+            ));
           },
           child: ListTile(
             title: Text('Nombre: ${asesoresData[index]["Nombre"]}'),
