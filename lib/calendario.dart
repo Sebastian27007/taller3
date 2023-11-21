@@ -31,7 +31,7 @@ class _HomeState extends State<HomeCalendar> with TickerProviderStateMixin {
     super.initState();
     today = DateTime.now();
   }
-
+/*
   void _navigateToAsesorDetailPage(BuildContext context) {
     Navigator.of(context).push(
       MaterialPageRoute(
@@ -42,7 +42,7 @@ class _HomeState extends State<HomeCalendar> with TickerProviderStateMixin {
       ),
     );
   }
-
+*/
 
 
   void _onDaySelected(DateTime day, DateTime focusedDay) {

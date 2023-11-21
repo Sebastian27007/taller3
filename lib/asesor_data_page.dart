@@ -3,10 +3,8 @@ import 'package:ti3app/calendario.dart';
 
 class AsesorDetailPage extends StatelessWidget {
   final Map<String, dynamic> asesorData;
-  final DateTime selectedDate;
-  final TimeOfDay selectedTime;
 
-  AsesorDetailPage({required this.asesorData, required DateTime this.selectedDate, required TimeOfDay this.selectedTime});
+  AsesorDetailPage({required this.asesorData});
 
   @override
   Widget build(BuildContext context) {
@@ -22,8 +20,6 @@ class AsesorDetailPage extends StatelessWidget {
           Text('Rol: ${asesorData["Rol"]}'),
           Text('Especialidad: ${asesorData["Especialidad"]}'),
 
-          Text('Fecha seleccionada: ${selectedDate.toString().split(" ")[0]}'),
-          Text('Hora seleccionada: ${selectedTime.format(context)}'),
           // Otros detalles del asesor...
           ElevatedButton(onPressed: (){
               Navigator.of(context).push(MaterialPageRoute(builder: (context) => Calendar()));
