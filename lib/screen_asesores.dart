@@ -1,3 +1,4 @@
+import 'dart:io';
 import 'dart:convert';
 import 'package:flutter/material.dart';
 import 'package:http/http.dart' as http;
@@ -33,7 +34,7 @@ class _MyHomePageState extends State<MyHomePage> {
   }
 
   Future<void> fetchData() async {
-    final response = await http.get(Uri.parse("http://localhost/api_taller3/consultar_asesor.php"));
+    final response = await http.get(Uri.parse("http://172.16.144.162/api_taller3/consultar_asesor.php"));
 
     if (response.statusCode == 200) {
       setState(() {
@@ -67,6 +68,7 @@ class _MyHomePageState extends State<MyHomePage> {
                 Text('Carrera: ${asesoresData[index]["Carrera"]}'),
                 Text('Rol: ${asesoresData[index]["Rol"]}'),
                 Text('Especialidad: ${asesoresData[index]["Especialidad"]}'),
+                Text('Correo: ${asesoresData[index]["Correo"]}'),
                 ],
               ),
             ),

@@ -51,7 +51,7 @@ class Recursos extends StatelessWidget{
                 Container(
                 padding: const EdgeInsets.all(20),
                 width: double.infinity,
-                height: 400,
+                height: 600,
                 margin: const EdgeInsets.symmetric(horizontal: 40),
                 decoration: BoxDecoration(
                 color: Colors.white,

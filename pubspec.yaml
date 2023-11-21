@@ -49,6 +49,8 @@ dependencies:
   form_builder_validators: ^9.1.0
   table_calendar: ^3.0.9
   calendar_view: ^1.0.4
+  jitsi_meet_flutter_sdk:
+  
 
 dev_dependencies:
   flutter_test:

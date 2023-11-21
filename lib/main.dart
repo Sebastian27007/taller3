@@ -1,9 +1,11 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 import 'package:ti3app/Login_app.dart';
 import 'package:ti3app/chat_bot.dart';
 import 'package:ti3app/create_perfil.dart';
 import 'package:ti3app/Foro.dart';
 import 'package:ti3app/resources.dart';
+import 'package:ti3app/screen_asesores.dart';
 
 /*void main(){
   runApp(MyApp());
@@ -176,7 +178,16 @@ class _MyCombinedPageState extends State<MyCombinedPage> {
                   children: <Widget>[
                     const SizedBox(height: 30,),
                     MaterialButton(
-                      onPressed: () {},
+                      onPressed: () {
+                      try {
+                        Navigator.push(
+                          context,
+                          MaterialPageRoute(builder: (context) => MyHomePage()),
+                        );
+                      } catch (e) {
+                        print('Error al navegar: $e');
+                        }
+                      },
                       padding: const EdgeInsets.symmetric(horizontal: 80, vertical: 25),
                       shape: RoundedRectangleBorder(
                           borderRadius: BorderRadius.circular(20.0)),
@@ -268,7 +279,7 @@ class _MyCombinedPageState extends State<MyCombinedPage> {
                           SizedBox(
                             width: MediaQuery.of(context).size.width,
                             child: Text(
-                              'Redes sociales',
+                              'Foro Universidad',
                               textAlign: TextAlign.center,
                               style: Theme.of(context).textTheme.headline4,
                             ),
@@ -278,21 +289,8 @@ class _MyCombinedPageState extends State<MyCombinedPage> {
                             mainAxisAlignment: MainAxisAlignment.spaceAround,
                             children: <Widget>[
                               MaterialButton(
-                                onPressed: () {},
-                                padding:
-                                const EdgeInsets.symmetric(horizontal: 40, vertical: 25),
-                                shape: RoundedRectangleBorder(
-                                    borderRadius: BorderRadius.circular(20.0)),
-                                color: Colors.blueAccent,
-                                child: const Text(
-                                  'Asesores',
-                                  style: TextStyle(color: Colors.white),
-                                ),
-                              ),
-                              MaterialButton(
                                 onPressed: () {
-                                  //Navigator.push(context, MaterialPageRoute(builder: (context) => LoginApp()),
-                                  //);
+                                   Navigator.of(context).push(MaterialPageRoute(builder: (context) => ComunidadUCTApp())); 
                                 },
                                 padding:
                                 const EdgeInsets.symmetric(horizontal: 40, vertical: 25),
@@ -300,7 +298,7 @@ class _MyCombinedPageState extends State<MyCombinedPage> {
                                     borderRadius: BorderRadius.circular(20.0)),
                                 color: Colors.blueAccent,
                                 child: const Text(
-                                  'Profesores',
+                                  'Ingresar al foro',
                                   style: TextStyle(color: Colors.white),
                                 ),
                               ),

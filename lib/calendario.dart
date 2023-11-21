@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:table_calendar/table_calendar.dart';
 import 'package:ti3app/asesor_data_page.dart';
-void main() {
-  runApp(Calendar());
-}
+
+import 'main.dart';
+
 
 class Calendar extends StatelessWidget {
   @override
@@ -76,6 +76,15 @@ class _HomeState extends State<HomeCalendar> with TickerProviderStateMixin {
           style: TextStyle(
             fontSize: 24,
           ),
+        ),
+        leading: IconButton(
+          icon: const Icon(
+            Icons.arrow_back,
+            color: Colors.black,
+          ), onPressed: () {
+          Navigator.push(context, MaterialPageRoute(builder: (context) => const MyApp()),
+            );
+          },
         ),
       ),
       body: Column(
